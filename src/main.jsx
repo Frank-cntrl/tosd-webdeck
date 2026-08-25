@@ -9,6 +9,11 @@ import Partners from './pages/Partners'
 import Plan from './pages/Plan'
 import Team from './pages/Team'
 import NotFound from './pages/NotFound'
+import FineArt from './pages/FineArt'
+import Comedy from './pages/Comedy'
+import Music from './pages/Music'
+import Cannabis from './pages/Cannabis'
+import Events from './pages/Events'
 import './index.css'
 
 const theme = createTheme({
@@ -30,6 +35,11 @@ const router = createBrowserRouter([
       { path: 'partners', element: <Partners /> },
       { path: 'plan', element: <Plan /> },
       { path: 'team', element: <Team /> },
+      { path: 'fine-art', element: <FineArt /> },
+      { path: 'comedy', element: <Comedy /> },
+      { path: 'music', element: <Music /> },
+      { path: 'cannabis', element: <Cannabis /> },
+      { path: 'events', element: <Events /> },
       { path: '*', element: <NotFound /> },
     ],
   },
