@@ -30,9 +30,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-accent text-xl leading-none" aria-hidden="true">
-                ⧗
-              </span>
+              <img src="/logo-gold.png" alt="" className="h-7 w-auto" />
               <span className="font-display text-lg text-white tracking-widest uppercase">
                 {site.brand.name}
               </span>
