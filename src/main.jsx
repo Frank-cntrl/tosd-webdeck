@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material'
 import App from './App'
+import Home from './pages/Home'
+import About from './pages/About'
+import Partners from './pages/Partners'
+import Plan from './pages/Plan'
+import Team from './pages/Team'
+import NotFound from './pages/NotFound'
 import './index.css'
 
 const theme = createTheme({
@@ -19,7 +25,12 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
-      { index: true, element: <div className="p-24 text-center text-white">TOSD</div> },
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'partners', element: <Partners /> },
+      { path: 'plan', element: <Plan /> },
+      { path: 'team', element: <Team /> },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ])
