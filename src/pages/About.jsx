@@ -45,11 +45,11 @@ export default function About() {
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <SectionHeading eyebrow="History">Producing in NYC since the mid-2000s</SectionHeading>
         <p className="max-w-3xl text-base leading-relaxed text-neutral-400">{about.history}</p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        <div className="mt-14 grid max-w-3xl gap-10 sm:grid-cols-3">
           {about.stats.map((s) => (
-            <div key={s.label} className="rounded-md border border-edge bg-surface/40 p-6 text-center">
-              <p className="font-display text-4xl text-accent">{s.value}</p>
-              <p className="mt-2 text-xs uppercase tracking-widest text-neutral-500">{s.label}</p>
+            <div key={s.label} className="border-t border-edge pt-4">
+              <p className="font-display text-3xl text-white">{s.value}</p>
+              <p className="mt-1 text-xs uppercase tracking-widest text-neutral-500">{s.label}</p>
             </div>
           ))}
         </div>

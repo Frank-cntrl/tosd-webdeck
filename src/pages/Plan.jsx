@@ -8,8 +8,8 @@ const { plan } = site
 
 function RoadmapCard({ title, items }) {
   return (
-    <div className="rounded-md border border-edge bg-surface/40 p-8">
-      <h3 className="font-display text-2xl text-accent">{title}</h3>
+    <div className="border-t border-edge pt-6">
+      <h3 className="font-display text-2xl text-white">{title}</h3>
       <ul className="mt-5 space-y-3">
         {items.map((i) => (
           <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-neutral-300">

@@ -69,16 +69,16 @@ export default function Home() {
           <SectionHeading eyebrow="Highlights">
             What The One Stop Drop has to offer
           </SectionHeading>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {home.highlights.map((h, i) => (
-              <div key={h} className="rounded-md border border-edge bg-ink p-6">
-                <span className="font-display text-2xl text-accent">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-300">{h}</p>
-              </div>
+          <ul className="grid gap-x-12 sm:grid-cols-2">
+            {home.highlights.map((h) => (
+              <li
+                key={h}
+                className="border-t border-edge py-4 text-sm leading-relaxed text-neutral-300"
+              >
+                {h}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

@@ -20,10 +20,10 @@ function Media({ film }) {
       href={film.url}
       target="_blank"
       rel="noreferrer"
-      className="group flex aspect-video w-full flex-col items-center justify-center gap-4 rounded-md border border-edge bg-gradient-to-br from-surface to-ink p-8 text-center transition-colors hover:border-accent"
+      className="group flex aspect-video w-full flex-col items-center justify-center gap-5 rounded-md border border-edge bg-surface p-8 text-center transition-colors hover:border-neutral-500"
     >
       <p className="font-display text-2xl text-white sm:text-3xl">{film.tagline}</p>
-      <span className="rounded-sm bg-accent px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-ink transition-opacity group-hover:opacity-85">
+      <span className="border-b border-accent pb-0.5 text-xs font-semibold uppercase tracking-widest text-accent">
         Visit the {film.mediaLabel}
       </span>
     </a>
