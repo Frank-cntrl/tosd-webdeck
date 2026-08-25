@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
             <div className="flex items-center gap-2">
-              <img src="/logo-gold.png" alt="" className="h-7 w-auto" />
+              <img src="/logo-badge.png" alt="" className="h-8 w-8 rounded-full" />
               <span className="font-display text-lg text-white tracking-widest uppercase">
                 {site.brand.name}
               </span>

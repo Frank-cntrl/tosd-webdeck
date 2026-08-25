@@ -10,6 +10,7 @@ export const site = {
       { label: 'About', path: '/about' },
       { label: 'Partners & Investors', path: '/partners' },
       { label: 'The Plan', path: '/plan' },
+      { label: 'Documentaries', path: '/documentaries' },
       { label: 'Team', path: '/team' },
     ],
     explore: [
@@ -212,6 +213,41 @@ export const site = {
       fiveYear: ['Cinema', 'Boutique cannabis hotel', 'Open new TOSD locations'],
       closing: 'Strict parameters and solid structure — infinite possibilities to explore.',
     },
+  },
+  documentaries: {
+    intro:
+      'Two feature documentaries anchor our first year of production — filmed alongside live shows produced by The One Stop Drop in NYC, Philadelphia, and Washington DC.',
+    films: [
+      {
+        title: 'Dom Irrera Is Not A Legend',
+        kind: 'Feature Documentary',
+        mediaLabel: 'Official Teaser',
+        format: 'youtube',
+        youtubeId: 'M106ESEQAo4',
+        logline:
+          "Celebrating the life and career of comedy legend Dom Irrera — and his ongoing experience as a comedian in his winter years, living and performing with Parkinson's disease.",
+        details: [
+          'Featuring Daniel Tosh, Russell Peters, Joey Diaz, and more',
+          'Strong potential for major platform acquisition',
+          'Features footage from live Dom & Friends shows produced by The One Stop Drop',
+        ],
+      },
+      {
+        title: 'Mentors',
+        kind: 'Feature Documentary',
+        mediaLabel: 'Official Site',
+        format: 'site',
+        url: 'https://mentors2026.lovable.app/',
+        tagline: 'Three Cities. Three Legends. One Journey.',
+        logline:
+          'A personal look inside the lives, careers, and ubiquitous influence on the comedy scene of legendary comedians Greer Barnes (NYC), Keith Robinson (Philly), and Tony Woods (DC) — as they return to their hometowns for a three-city tour, hosted by Matt Richards.',
+        details: [
+          'Directed by Pete Demas of Endless Films, whose documentaries have premiered at Tribeca and Cannes',
+          'Blends live performances with raw, behind-the-scenes moments — greenroom stories, road trips, and decades of shared stages',
+          'Brian Morris serves as Executive Producer; presented as a TOSD production',
+        ],
+      },
+    ],
   },
   team: {
     note: 'Our team of producers, directors, and creative partners is being finalized. Photos and bios are coming soon.',
