@@ -13,7 +13,7 @@ const linkClass = ({ isActive }) =>
 function Wordmark() {
   return (
     <Link to="/" className="flex items-center gap-2 shrink-0">
-      <img src="/logo-badge.png" alt="" className="h-8 w-8 rounded-full" />
+      <img src="/logo-gold.png" alt="" className="h-7 w-auto" />
       <span className="font-display text-lg sm:text-xl text-white tracking-widest uppercase whitespace-nowrap">
         The One Stop Drop
       </span>

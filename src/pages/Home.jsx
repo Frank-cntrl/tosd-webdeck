@@ -33,9 +33,9 @@ export default function Home() {
         />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-24 text-center sm:px-6 sm:py-36">
           <img
-            src="/logo-badge.png"
+            src="/logo-gold.png"
             alt="The One Stop Drop logo"
-            className="mb-8 h-28 w-28 rounded-full sm:h-36 sm:w-36"
+            className="mb-8 h-28 w-auto sm:h-36"
           />
           <h1 className="font-display text-4xl uppercase tracking-[0.15em] text-white sm:text-6xl">
             {brand.name}
