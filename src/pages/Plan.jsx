@@ -29,6 +29,15 @@ export default function Plan() {
     <>
       <PageHeader eyebrow={plan.eyebrow} title={plan.title} intro={plan.intro} />
 
+      <section className="mx-auto max-w-4xl px-4 pt-16 sm:px-6">
+        <SectionHeading eyebrow="Launch Strategy">The first six months</SectionHeading>
+        <div className="space-y-5 text-base leading-relaxed text-neutral-400">
+          {plan.launchStrategy.map((p) => (
+            <p key={p.slice(0, 40)}>{p}</p>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
         {plan.items.map((item, idx) => (
           <Accordion

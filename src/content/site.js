@@ -16,23 +16,19 @@ export const site = {
   },
   home: {
     heroLead:
-      'A NYC-based production & media company that specializes in and integrates fine art, comedy, music, and cannabis.',
+      "The One Stop Drop (TOST'D) is a NYC-based live production and media company integrating fine art, comedy, music, and cannabis into original content and expertly curated events across the city and state.",
     mission: [
-      'The One Stop Drop delivers brand-aligned, original content and live events across multiple NYC venues — creating expertly curated experiences and spaces for our artists and audiences to engage and collaborate.',
-      'The One Stop Drop represents and engages a network like none other, reaching the collective audiences of artists, comedians, musicians, influencers and cannabis brands featured across our network. Together, these partnerships form an organic distribution engine that transcends traditional advertising limits.',
+      'We provide a platform and landscape — in person and digitally — upon which our artists can shine as individuals and grow through collaboration.',
+      'Our programming highlights each genre independently, while creating new and interesting dynamics that merge the genres through artist collaboration and events tailored to represent and integrate each of them.',
+      "Built on founder Brian Morris's 20 years of relationships with the artists, comedians, musicians, and brands he's staged and represented, TOST'D turns that network into an organic distribution engine no ad buy can replicate.",
     ],
+    highlightsHeading: "What TOST'D offers across six months of programming",
     highlights: [
-      'Tens of millions in reach through year-one talent network',
-      'Brand collabs integrated into culture, events, and streaming',
-      'Core partnership with select cannabis brands + support for aligned partners',
-      'Consistent, profitable content across formats',
+      'Core partnership with select cannabis brands and support for aligned partners',
       'Access to top artists, comedians, musicians, filmmakers, and tastemakers',
       'Events + content that introduce brands to national and global markets ahead of national legalization',
-    ],
-    willDo: [
       'Help brands bypass marketing restrictions',
       "Embed brands into NYC's cultural ecosystem",
-      'Position partnered brands alongside world-class artists and luxury names',
     ],
   },
   about: {
@@ -55,8 +51,8 @@ export const site = {
   partners: {
     headline: 'A strategic alliance for culture and growth.',
     alliance:
-      'A partnership with The One Stop Drop amplifies our collective ability to fundraise, activate, and stay relevant across multiple cultural touchpoints — from cannabis to fine art to lifestyle.',
-    offersLead: "By combining with TOSD's creative and media infrastructure, we offer brands:",
+      "A partnership with TOST'D amplifies our collective ability to fundraise, activate, and stay relevant across multiple cultural touchpoints — from cannabis to fine art to lifestyle.",
+    offersLead: "By combining with TOST'D's creative and media infrastructure, we provide our partners:",
     offers: [
       'Immediate cultural integration and influence',
       'Access to high-profile talent and curated events',
@@ -74,7 +70,7 @@ export const site = {
       },
       {
         title: 'Investors',
-        body: 'Investors to support content and network expansion — $250k–$1.5m target.',
+        body: 'Investors to support content and network expansion.',
       },
       {
         title: 'Strategic Media Collaborators',
@@ -83,23 +79,17 @@ export const site = {
     ],
     seed: {
       heading: 'Seed Funding',
-      body: "We're looking for $100–250K in seed funding to shoot content, host pop-ups, finish our first 2 documentaries, and expand infrastructure.",
+      body: "We're looking for $250k in seed funding to secure our executive team, artists, partners, and sponsors to execute our plan for the first six months of programming — with a $1.5m target over 24 months.",
       offer:
-        'We offer brand placement, ROI from ticket and content sales, debt, and/or early equity in the media company.',
+        "We offer brand placement, ROI from ticket and content sales, debt, and/or early equity in TOST'D.",
     },
     capitalHeading: 'Capital will support',
     capital: [
       'Venue & Location Costs',
-      'Production',
-      'Talent',
-      'Crew & Staffing',
+      'Content Production & Event Operations',
+      'Executive Team & Talent',
+      'Brand & Business Development',
       'Marketing',
-      'Equipment',
-      'Security & Logistics',
-      'Content Production',
-      'Brand Development',
-      'Business Development',
-      'Event Operations',
     ],
     capitalNote:
       'Our existing relationships will keep these costs very low, while allowing us to maintain the highest standards of quality across all of our productions.',
@@ -108,6 +98,13 @@ export const site = {
     eyebrow: 'As Proof of Concept',
     title: 'Six-Month Plan of Action',
     intro: 'Launch strategy & programming.',
+    launchStrategy: [
+      'In the first six months we will enlist an extraordinary coalition of partners, sponsors, investors, curators, and artists. The One Stop Drop will serve as a nexus for this exceptional foundation. Together we will establish monthly comedy, music, and cannabis events in partnered venues throughout New York City and State — each event may include one or all of these offerings.',
+      "Our first fine art exhibition is scheduled for our fourth month of operations. The pop-up gallery will serve as our base of operations for the duration of the exhibition, with curated cultural and creative events in the gallery space featuring TOST'D artists and comedians. Every gallery exhibition will host one night of comedy and music featuring our A-list musicians and comedians.",
+      'All of our events provide opportunities for filming and creating original content. We will work with our artists and partners across each sector on developing content for our online universe, curated simultaneously with our live programming. On our website and social media channels we will provide consistent original and existing content from our artist roster — including personalized introductions to each artist from our founder: "Artist Bios."',
+      'This structure affords us the opportunity to establish our brand identity across multiple markets in partnership with reputable and recognizable brands and artists. We will maintain a low overhead with the support of our partnered production companies and venues. Following and adjusting our six-month model across 18 months will lay the foundation for the build-out of our flagship location around the two-year mark.',
+      'We have the support of DarkMoon Entertainment, Deja Vu Productions, and 4 Life Entertainment to produce and scale all of our productions. This paradigm allows us to operate within each sector independently, while creating a context that seamlessly integrates fine art, comedy, music, and cannabis at the highest levels across each genre.',
+    ],
     items: [
       {
         id: 'A',

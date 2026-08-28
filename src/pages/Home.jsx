@@ -66,9 +66,7 @@ export default function Home() {
       {/* Highlights */}
       <section className="border-y border-edge bg-surface/40">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <SectionHeading eyebrow="Highlights">
-            What The One Stop Drop has to offer
-          </SectionHeading>
+          <SectionHeading eyebrow="Highlights">{home.highlightsHeading}</SectionHeading>
           <ul className="grid gap-x-12 sm:grid-cols-2">
             {home.highlights.map((h) => (
               <li
@@ -80,21 +78,6 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </section>
-
-      {/* Will do */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <SectionHeading>The One Stop Drop will</SectionHeading>
-        <ul className="max-w-3xl space-y-4">
-          {home.willDo.map((w) => (
-            <li key={w} className="flex items-start gap-3 text-base text-neutral-300">
-              <span className="mt-1 text-accent" aria-hidden="true">
-                —
-              </span>
-              {w}
-            </li>
-          ))}
-        </ul>
       </section>
 
       {/* CTA band */}
