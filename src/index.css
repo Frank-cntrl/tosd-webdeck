@@ -8,6 +8,10 @@
   --color-accent: #f5b942;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-ink);
   color: var(--color-neutral-300);

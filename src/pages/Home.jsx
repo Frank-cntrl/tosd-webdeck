@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { site } from '../content/site'
 
@@ -6,8 +5,8 @@ const { brand, home } = site
 
 function Cta({ to, primary, children }) {
   return (
-    <Link
-      to={to}
+    <a
+      href={to}
       className={
         primary
           ? 'rounded-sm bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-widest text-ink transition-opacity hover:opacity-85'
@@ -15,7 +14,7 @@ function Cta({ to, primary, children }) {
       }
     >
       {children}
-    </Link>
+    </a>
   )
 }
 
@@ -43,10 +42,10 @@ export default function Home() {
           <p className="mt-4 text-sm uppercase tracking-[0.35em] text-accent">{brand.tagline}</p>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-neutral-300">{home.heroLead}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Cta to="/partners" primary>
+            <Cta to="#partners" primary>
               Partner With Us
             </Cta>
-            <Cta to="/plan">See The Plan</Cta>
+            <Cta to="#plan">See The Plan</Cta>
           </div>
         </div>
       </section>
@@ -86,7 +85,7 @@ export default function Home() {
           <h2 className="font-display text-3xl text-white">
             A living ecosystem of culture, creativity, and commerce.
           </h2>
-          <Cta to="/partners" primary>
+          <Cta to="#partners" primary>
             Partners & Investors
           </Cta>
         </div>

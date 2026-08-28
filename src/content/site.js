@@ -6,12 +6,12 @@ export const site = {
   },
   nav: {
     core: [
-      { label: 'Home', path: '/' },
-      { label: 'About', path: '/about' },
-      { label: 'Partners & Investors', path: '/partners' },
-      { label: 'The Plan', path: '/plan' },
-      { label: 'Documentaries', path: '/documentaries' },
-      { label: 'Team', path: '/team' },
+      { label: 'Home', anchor: '#home' },
+      { label: 'About', anchor: '#about' },
+      { label: 'Partners & Investors', anchor: '#partners' },
+      { label: 'The Plan', anchor: '#plan' },
+      { label: 'Documentaries', anchor: '#documentaries' },
+      { label: 'Team', anchor: '#team' },
     ],
   },
   home: {

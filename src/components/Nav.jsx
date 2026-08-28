@@ -1,29 +1,22 @@
 import { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
 import { Drawer, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import { site } from '../content/site'
 
-const linkClass = ({ isActive }) =>
-  `text-sm tracking-wide transition-colors hover:text-accent ${
-    isActive ? 'text-accent' : 'text-neutral-300'
-  }`
-
 function Wordmark() {
   return (
-    <Link to="/" className="flex items-center gap-2 shrink-0">
+    <a href="#home" className="flex items-center gap-2 shrink-0">
       <img src="/logo-gold.png" alt="" className="h-7 w-auto" />
       <span className="font-display text-lg sm:text-xl text-white tracking-widest uppercase whitespace-nowrap">
         The One Stop Drop
       </span>
-    </Link>
+    </a>
   )
 }
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
-  const allLinks = site.nav.core
 
   return (
     <header className="sticky top-0 z-50 border-b border-edge bg-ink/90 backdrop-blur">
@@ -33,9 +26,13 @@ export default function Nav() {
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-7">
           {site.nav.core.map((l) => (
-            <NavLink key={l.path} to={l.path} className={linkClass} end={l.path === '/'}>
+            <a
+              key={l.anchor}
+              href={l.anchor}
+              className="text-sm tracking-wide text-neutral-300 transition-colors hover:text-accent"
+            >
               {l.label}
-            </NavLink>
+            </a>
           ))}
         </div>
 
@@ -63,20 +60,15 @@ export default function Nav() {
           </IconButton>
         </div>
         <div className="flex flex-col gap-1 p-4">
-          {allLinks.map((l) => (
-            <NavLink
-              key={l.path}
-              to={l.path}
-              end={l.path === '/'}
+          {site.nav.core.map((l) => (
+            <a
+              key={l.anchor}
+              href={l.anchor}
               onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                `rounded px-3 py-2.5 text-sm tracking-wide transition-colors hover:bg-surface ${
-                  isActive ? 'text-accent' : 'text-neutral-200'
-                }`
-              }
+              className="rounded px-3 py-2.5 text-sm tracking-wide text-neutral-200 transition-colors hover:bg-surface"
             >
               {l.label}
-            </NavLink>
+            </a>
           ))}
         </div>
       </Drawer>
