@@ -13,13 +13,6 @@ export const site = {
       { label: 'Documentaries', path: '/documentaries' },
       { label: 'Team', path: '/team' },
     ],
-    explore: [
-      { label: 'Fine Art', path: '/fine-art' },
-      { label: 'Comedy', path: '/comedy' },
-      { label: 'Music', path: '/music' },
-      { label: 'Cannabis', path: '/cannabis' },
-      { label: 'Live Events', path: '/events' },
-    ],
   },
   home: {
     heroLead:
@@ -255,43 +248,6 @@ export const site = {
       name: 'Name TBD',
       role: 'Role TBD',
     })),
-  },
-  categories: {
-    fineArt: {
-      title: 'Fine Art',
-      blurb:
-        'A curated online space for the exceptional fine artists on our roster — presented with the same standards and attention to detail as our live productions. Select artists will replace these placeholders.',
-      cardLabel: 'Artwork',
-      cardCount: 9,
-    },
-    comedy: {
-      title: 'Comedy',
-      blurb:
-        'The comedians of The One Stop Drop network — from A-list headliners to the young talent our satellite stages will incubate. Select comics will replace these placeholders.',
-      cardLabel: 'Comedian',
-      cardCount: 9,
-    },
-    music: {
-      title: 'Music',
-      blurb:
-        'Musicians and live performances from across our network, captured on our stages and shared with the world. Select musicians will replace these placeholders.',
-      cardLabel: 'Musician',
-      cardCount: 9,
-    },
-    cannabis: {
-      title: 'Cannabis',
-      blurb:
-        "Our cannabis brand partners and sponsors — licensed dispensaries and boutique brands embedded into NYC's cultural ecosystem. Partner brands will replace these placeholders.",
-      cardLabel: 'Brand partner',
-      cardCount: 9,
-    },
-    events: {
-      title: 'Live Events',
-      blurb:
-        'Comedy shows, exhibitions, pop-ups, and curated cultural events across multiple NYC venues. Upcoming events will replace these placeholders.',
-      cardLabel: 'Event',
-      cardCount: 9,
-    },
   },
   footer: {
     credit: 'Brian D. Morris — Glasschord Trustee',

@@ -10,11 +10,6 @@ import Plan from './pages/Plan'
 import Team from './pages/Team'
 import Documentaries from './pages/Documentaries'
 import NotFound from './pages/NotFound'
-import FineArt from './pages/FineArt'
-import Comedy from './pages/Comedy'
-import Music from './pages/Music'
-import Cannabis from './pages/Cannabis'
-import Events from './pages/Events'
 import './index.css'
 
 const theme = createTheme({
@@ -37,11 +32,6 @@ const router = createBrowserRouter([
       { path: 'plan', element: <Plan /> },
       { path: 'documentaries', element: <Documentaries /> },
       { path: 'team', element: <Team /> },
-      { path: 'fine-art', element: <FineArt /> },
-      { path: 'comedy', element: <Comedy /> },
-      { path: 'music', element: <Music /> },
-      { path: 'cannabis', element: <Cannabis /> },
-      { path: 'events', element: <Events /> },
       { path: '*', element: <NotFound /> },
     ],
   },

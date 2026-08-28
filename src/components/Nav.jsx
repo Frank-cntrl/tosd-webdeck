@@ -23,7 +23,7 @@ function Wordmark() {
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
-  const allLinks = [...site.nav.core, ...site.nav.explore]
+  const allLinks = site.nav.core
 
   return (
     <header className="sticky top-0 z-50 border-b border-edge bg-ink/90 backdrop-blur">
@@ -37,31 +37,6 @@ export default function Nav() {
               {l.label}
             </NavLink>
           ))}
-          <div className="relative group">
-            <button
-              type="button"
-              className="text-sm tracking-wide text-neutral-300 transition-colors group-hover:text-accent"
-            >
-              Explore ▾
-            </button>
-            <div className="invisible absolute right-0 top-full pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <div className="w-44 rounded-md border border-edge bg-surface py-2 shadow-xl">
-                {site.nav.explore.map((l) => (
-                  <NavLink
-                    key={l.path}
-                    to={l.path}
-                    className={({ isActive }) =>
-                      `block px-4 py-2 text-sm transition-colors hover:bg-ink hover:text-accent ${
-                        isActive ? 'text-accent' : 'text-neutral-300'
-                      }`
-                    }
-                  >
-                    {l.label}
-                  </NavLink>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Mobile */}
