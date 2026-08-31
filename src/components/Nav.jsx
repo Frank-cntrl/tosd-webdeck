@@ -3,11 +3,12 @@ import { Drawer, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import { site } from '../content/site'
+import { colorway } from '../colorways'
 
 function Wordmark() {
   return (
     <a href="#home" className="flex items-center gap-2 shrink-0">
-      <img src="/logo-gold.png" alt="" className="h-7 w-auto" />
+      <img src={colorway.logo} alt="" className="h-7 w-auto" />
       <span className="font-display text-lg sm:text-xl text-white tracking-widest uppercase whitespace-nowrap">
         The One Stop Drop
       </span>

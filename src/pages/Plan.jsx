@@ -35,7 +35,7 @@ export default function Plan() {
               '&:before': { display: 'none' },
             }}
           >
-            <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: '#f5b942' }} />}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'var(--color-accent)' }} />}>
               <span className="mr-4 font-display text-lg text-accent">{item.id}</span>
               <span className="self-center text-sm font-medium text-white sm:text-base">
                 {item.title}

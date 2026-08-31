@@ -1,4 +1,5 @@
 import { site } from '../content/site'
+import { colorway } from '../colorways'
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2">
           <div>
             <div className="flex items-center gap-2">
-              <img src="/logo-gold.png" alt="" className="h-7 w-auto" />
+              <img src={colorway.logo} alt="" className="h-7 w-auto" />
               <span className="font-display text-lg text-white tracking-widest uppercase">
                 {site.brand.name}
               </span>

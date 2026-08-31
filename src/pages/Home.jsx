@@ -1,5 +1,6 @@
 import SectionHeading from '../components/SectionHeading'
 import { site } from '../content/site'
+import { colorway } from '../colorways'
 
 const { brand, home } = site
 
@@ -27,18 +28,21 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 opacity-40"
           style={{
             background:
-              'radial-gradient(ellipse 70% 60% at 50% 0%, rgba(245,185,66,0.12), transparent)',
+              'radial-gradient(ellipse 70% 60% at 50% 0%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent)',
           }}
         />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-24 text-center sm:px-6 sm:py-36">
-          <img
-            src="/logo-gold.png"
-            alt="The One Stop Drop logo"
-            className="mb-8 h-28 w-auto sm:h-36"
-          />
           <h1 className="font-display text-4xl uppercase tracking-[0.15em] text-white sm:text-6xl">
             {home.heroTitle}
           </h1>
+          <img
+            src={colorway.logo}
+            alt="The One Stop Drop logo"
+            className="my-8 h-28 w-auto sm:h-36"
+          />
+          <p className="font-display text-xl uppercase tracking-[0.2em] text-white sm:text-2xl">
+            {brand.name}
+          </p>
           <p className="mt-4 text-sm uppercase tracking-[0.35em] text-accent">{brand.tagline}</p>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-neutral-300">{home.heroLead}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
