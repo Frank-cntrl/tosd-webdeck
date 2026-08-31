@@ -78,11 +78,11 @@ export const site = {
       {
         title: '2012–2017 — The Gallery Years',
         body: [
-          'The success of Glasschord presented Brian with the opportunity to open Brian Morris Gallery, Brian Morris Midtown, and Morris-Warren Gallery. Over nearly five years he mounted more than 40 exhibitions in NYC, Brooklyn, Miami, and Paris — receiving praise from artcritical, Hyperallergic, NY Arts Magazine, and many more.',
+          'The success of Glasschord presented Brian with the opportunity to open Brian Morris Gallery, Brian Morris Midtown, and Morris-Warren Gallery. Over nearly five years he mounted more than 40 exhibitions in NYC, Brooklyn, Miami, and Paris — receiving praise from artcritical, Hyper Allergic, NY Arts Magazine, and many more.',
         ],
         quote: {
           text: '“Cuts Noon Light” is a sleek, smart, strikingly cohesive group show at Brian Morris Gallery featuring the work of three very different artists, Andrew Ginzel, Kara Rooney, and Steel Stillman. At once immediately familiar and decidedly alien, its hybrid objects foreground the unseen, the cryptic…',
-          attribution: 'Thomas Micchelli, Hyperallergic',
+          attribution: 'Thomas Micchelli, Hyper Allergic',
         },
       },
       {
