@@ -1,7 +1,9 @@
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import GalleryPage from './pages/GalleryPage'
-import { isGalleryPage } from './colorways'
+import AnimationPage from './pages/AnimationPage'
+import Intro from './components/Intro'
+import { isGalleryPage, isAnimationPage } from './colorways'
 import Home from './pages/Home'
 import About from './pages/About'
 import Partners from './pages/Partners'
@@ -10,9 +12,11 @@ import Documentaries from './pages/Documentaries'
 import Team from './pages/Team'
 
 export default function App() {
+  if (isAnimationPage) return <AnimationPage />
   if (isGalleryPage) return <GalleryPage />
   return (
     <div className="flex min-h-screen flex-col bg-ink">
+      <Intro />
       <Nav />
       <main className="flex-1">
         <section id="home" className="scroll-mt-16">

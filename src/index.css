@@ -12,6 +12,66 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Landing intro animation */
+.intro-overlay {
+  animation: intro-out 0.6s ease 2.7s forwards;
+}
+@keyframes intro-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.intro-drop {
+  animation: intro-fall 1.1s cubic-bezier(0.3, 0, 0.4, 1) both;
+}
+@keyframes intro-fall {
+  0% {
+    transform: translateY(-55vh);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.intro-ripple {
+  opacity: 0;
+  animation: intro-ripple 1.2s ease-out 0.68s both;
+}
+@keyframes intro-ripple {
+  0% {
+    transform: scaleX(0.25) scaleY(0.25);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scaleX(2.2) scaleY(1.6);
+    opacity: 0;
+  }
+}
+.intro-text {
+  opacity: 0;
+  animation: intro-up 0.7s ease both;
+}
+@keyframes intro-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 body {
   background-color: var(--color-ink);
   color: var(--color-neutral-300);

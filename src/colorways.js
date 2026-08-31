@@ -14,3 +14,4 @@ export const colorway = cwSeg ? colorways[cwSeg] : colorways.default
 // path prefix that preserves the active colorway (e.g. '/lavender')
 export const prefix = cwSeg ? `/${cwSeg}` : ''
 export const isGalleryPage = segs.includes('gallery')
+export const isAnimationPage = segs.includes('animation')
