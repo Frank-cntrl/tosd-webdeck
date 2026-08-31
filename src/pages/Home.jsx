@@ -37,7 +37,7 @@ export default function Home() {
             className="mb-8 h-28 w-auto sm:h-36"
           />
           <h1 className="font-display text-4xl uppercase tracking-[0.15em] text-white sm:text-6xl">
-            {brand.name}
+            {home.heroTitle}
           </h1>
           <p className="mt-4 text-sm uppercase tracking-[0.35em] text-accent">{brand.tagline}</p>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-neutral-300">{home.heroLead}</p>
@@ -50,11 +50,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Press quote */}
+      <section className="border-b border-edge">
+        <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
+          <blockquote>
+            <p className="font-display text-xl italic leading-relaxed text-white sm:text-2xl">
+              “{home.pressQuote.text}”
+            </p>
+            <cite className="mt-4 block text-xs uppercase tracking-widest text-neutral-500 not-italic">
+              — {home.pressQuote.attribution}
+            </cite>
+          </blockquote>
+        </div>
+      </section>
+
       {/* Mission */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <SectionHeading eyebrow="Our Mission">
-          Culture, curated. Networks, connected.
-        </SectionHeading>
+        <SectionHeading eyebrow="Our Mission">{home.missionHeading}</SectionHeading>
         <div className="max-w-3xl space-y-5 text-base leading-relaxed text-neutral-400">
           {home.mission.map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>

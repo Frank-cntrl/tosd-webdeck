@@ -6,24 +6,6 @@ import { site } from '../content/site'
 
 const { plan } = site
 
-function RoadmapCard({ title, items }) {
-  return (
-    <div className="border-t border-edge pt-6">
-      <h3 className="font-display text-2xl text-white">{title}</h3>
-      <ul className="mt-5 space-y-3">
-        {items.map((i) => (
-          <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-neutral-300">
-            <span className="mt-1 text-accent" aria-hidden="true">
-              —
-            </span>
-            {i}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
 export default function Plan() {
   return (
     <>
@@ -76,6 +58,7 @@ export default function Plan() {
                     ))}
                   </ul>
                 )}
+                {item.outro && <p>{item.outro}</p>}
               </div>
             </AccordionDetails>
           </Accordion>
@@ -86,13 +69,19 @@ export default function Plan() {
       <section className="border-t border-edge bg-surface/40">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <SectionHeading eyebrow="The Future">Beyond the first six months</SectionHeading>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <RoadmapCard title="2-Year Plan" items={plan.future.twoYear} />
-            <RoadmapCard title="5-Year Plan" items={plan.future.fiveYear} />
-          </div>
-          <p className="mt-12 text-center font-display text-xl text-white">
-            {plan.future.closing}
-          </p>
+          <ul className="max-w-3xl space-y-3">
+            {plan.future.items.map((i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 text-base leading-relaxed text-neutral-300"
+              >
+                <span className="mt-1 text-accent" aria-hidden="true">
+                  —
+                </span>
+                {i}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>
