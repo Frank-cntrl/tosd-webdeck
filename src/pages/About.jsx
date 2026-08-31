@@ -21,7 +21,7 @@ function Quote({ text, attribution }) {
 export default function About() {
   return (
     <>
-      <PageHeader eyebrow="About" title="Rooted in NYC Art & Culture" intro={about.lead} />
+      <PageHeader eyebrow="About" title="Rooted in NYC Art & Culture" />
 
       {/* Founder */}
       <section className="border-b border-edge">
@@ -32,9 +32,8 @@ export default function About() {
             <p className="text-xs text-neutral-500">Founder</p>
           </div>
           <div>
-            <SectionHeading eyebrow="Our Founder">Gallerist and artist</SectionHeading>
             <div className="space-y-5 text-base leading-relaxed text-neutral-400">
-              {about.founder.map((p) => (
+              {[about.lead, ...about.founder].map((p) => (
                 <p key={p.slice(0, 40)}>{p}</p>
               ))}
             </div>
@@ -59,7 +58,7 @@ export default function About() {
 
       {/* History */}
       <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-        <SectionHeading eyebrow="History">Producing in NYC since the mid-2000s</SectionHeading>
+        <SectionHeading eyebrow="History">Producing in NYC Since the Mid-2000s</SectionHeading>
         {about.history.map((h) => (
           <div key={h.title} className="border-t border-edge py-10">
             <h3 className="font-display text-2xl text-white sm:text-3xl">{h.title}</h3>
@@ -80,7 +79,7 @@ export default function About() {
       {/* From the galleries */}
       <section className="border-t border-edge">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <h2 className="mb-8 font-display text-3xl text-white sm:text-4xl">From the galleries</h2>
+          <h2 className="mb-8 font-display text-3xl text-white sm:text-4xl">From the Galleries</h2>
           <GalleryGrid limit={8} />
           <div className="mt-8">
             <a

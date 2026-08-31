@@ -12,7 +12,7 @@ export default function Plan() {
       <PageHeader eyebrow={plan.eyebrow} title={plan.title} intro={plan.intro} />
 
       <section className="mx-auto max-w-4xl px-4 pt-16 sm:px-6">
-        <SectionHeading eyebrow="Launch Strategy">The first six months</SectionHeading>
+        <SectionHeading eyebrow="Launch Strategy">The First Six Months</SectionHeading>
         <div className="space-y-5 text-base leading-relaxed text-neutral-400">
           {plan.launchStrategy.map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
@@ -68,7 +68,7 @@ export default function Plan() {
       {/* The Future */}
       <section className="border-t border-edge bg-surface/40">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <SectionHeading eyebrow="The Future">Beyond the first six months</SectionHeading>
+          <SectionHeading eyebrow="The Future">Beyond the First Six Months</SectionHeading>
           <ul className="max-w-3xl space-y-3">
             {plan.future.items.map((i) => (
               <li

@@ -123,17 +123,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA band */}
-      <section className="border-t border-edge bg-surface/40">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center sm:px-6">
-          <h2 className="font-display text-3xl text-white">
-            A living ecosystem of culture, creativity, and commerce.
-          </h2>
-          <Cta to="#partners" primary>
-            Partners & Investors
-          </Cta>
-        </div>
-      </section>
     </>
   )
 }

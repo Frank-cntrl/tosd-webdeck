@@ -35,7 +35,7 @@ export default function Partners() {
       <section className="border-y border-edge bg-surface/40">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <SectionHeading eyebrow="Value Proposition">
-            An organic distribution engine
+            An Organic Distribution Engine
           </SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-neutral-400">
             {partners.valueProp}
@@ -45,7 +45,7 @@ export default function Partners() {
 
       {/* Our ask */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <SectionHeading eyebrow="Our Ask">We are actively seeking</SectionHeading>
+        <SectionHeading eyebrow="Our Ask">We Are Actively Seeking</SectionHeading>
         <div className="max-w-3xl">
           {partners.ask.map((a) => (
             <div key={a.title} className="border-t border-edge py-5">

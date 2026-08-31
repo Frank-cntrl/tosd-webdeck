@@ -135,7 +135,7 @@ export const site = {
       offer:
         "We offer brand placement, ROI from ticket and content sales, debt, and/or early equity in TOST'D.",
     },
-    capitalHeading: 'Capital will support',
+    capitalHeading: 'Capital Will Support',
     capital: [
       'Venue & Location Costs',
       'Content Production & Event Operations',
