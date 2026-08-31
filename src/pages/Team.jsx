@@ -12,7 +12,15 @@ export default function Team() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.members.map((m, i) => (
             <div key={i}>
-              <Placeholder label="Photo" ratio="aspect-square" />
+              {m.photo ? (
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  className="aspect-square w-full rounded-md object-cover"
+                />
+              ) : (
+                <Placeholder label="Photo" ratio="aspect-square" />
+              )}
               <p className="mt-3 text-sm text-white">{m.name}</p>
               <p className="text-xs text-neutral-500">{m.role}</p>
             </div>

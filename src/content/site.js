@@ -300,10 +300,13 @@ export const site = {
   },
   team: {
     note: 'Our team of producers, directors, and creative partners is being finalized. Photos and bios are coming soon.',
-    members: Array.from({ length: 8 }, () => ({
-      name: 'Name TBD',
-      role: 'Role TBD',
-    })),
+    members: [
+      { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian.jpg' },
+      ...Array.from({ length: 7 }, () => ({
+        name: 'Name TBD',
+        role: 'Role TBD',
+      })),
+    ],
   },
   footer: {
     credit: 'Brian D. Morris — Glasschord Trustee',

@@ -27,9 +27,12 @@ export default function About() {
       <section className="border-b border-edge">
         <div className="mx-auto grid max-w-6xl items-start gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_2fr]">
           <div>
-            <Placeholder label="Brian Morris portrait" ratio="aspect-[3/4]" />
-            <p className="mt-3 text-sm text-white">Brian Morris</p>
-            <p className="text-xs text-neutral-500">Founder</p>
+            <img
+              src="/photos/brian.jpg"
+              alt="Brian Morris holding his two dogs"
+              className="w-full rounded-md"
+            />
+            <p className="mt-3 text-xs uppercase tracking-widest text-neutral-500">Founder</p>
           </div>
           <div>
             <div className="space-y-5 text-base leading-relaxed text-neutral-400">
