@@ -8,5 +8,9 @@ export const colorways = {
   ocean: { accent: '#6aa7d8', logo: '/logo-ocean.png' },
 }
 
-const seg = window.location.pathname.split('/').filter(Boolean)[0]
-export const colorway = colorways[seg] ? colorways[seg] : colorways.default
+const segs = window.location.pathname.split('/').filter(Boolean)
+const cwSeg = colorways[segs[0]] ? segs[0] : null
+export const colorway = cwSeg ? colorways[cwSeg] : colorways.default
+// path prefix that preserves the active colorway (e.g. '/lavender')
+export const prefix = cwSeg ? `/${cwSeg}` : ''
+export const isGalleryPage = segs.includes('gallery')

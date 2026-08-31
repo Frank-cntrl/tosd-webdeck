@@ -1,5 +1,7 @@
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import GalleryPage from './pages/GalleryPage'
+import { isGalleryPage } from './colorways'
 import Home from './pages/Home'
 import About from './pages/About'
 import Partners from './pages/Partners'
@@ -8,6 +10,7 @@ import Documentaries from './pages/Documentaries'
 import Team from './pages/Team'
 
 export default function App() {
+  if (isGalleryPage) return <GalleryPage />
   return (
     <div className="flex min-h-screen flex-col bg-ink">
       <Nav />
