@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react'
 import { colorway } from '../colorways'
 
-const DURATION = 3400
-
+// Standalone scene used by the /animation preview page.
 export function IntroScene({ onClick }) {
   return (
     <div
-      className="intro-overlay fixed inset-0 z-[200] flex flex-col items-center justify-center bg-ink"
+      className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-ink"
       onClick={onClick}
     >
+      <p
+        className="intro-text mb-8 font-display text-3xl uppercase tracking-[0.2em] text-white sm:text-4xl"
+        style={{ animationDelay: '1.4s' }}
+      >
+        TOST'D
+      </p>
       <div className="relative flex flex-col items-center">
         <img src={colorway.logo} alt="" className="intro-drop h-28 w-auto sm:h-36" />
         <div
@@ -17,41 +21,11 @@ export function IntroScene({ onClick }) {
         />
       </div>
       <p
-        className="intro-text mt-12 font-display text-3xl uppercase tracking-[0.2em] text-white sm:text-4xl"
-        style={{ animationDelay: '1.4s' }}
-      >
-        TOST'D
-      </p>
-      <p
-        className="intro-text mt-3 text-xs uppercase tracking-[0.35em] text-accent"
+        className="intro-text mt-8 font-display text-xl uppercase tracking-[0.2em] text-white sm:text-2xl"
         style={{ animationDelay: '1.7s' }}
       >
         The One Stop Drop
       </p>
     </div>
   )
-}
-
-export default function Intro() {
-  const [show, setShow] = useState(() => {
-    try {
-      return !sessionStorage.getItem('tostd-intro')
-    } catch {
-      return true
-    }
-  })
-
-  useEffect(() => {
-    if (!show) return
-    try {
-      sessionStorage.setItem('tostd-intro', '1')
-    } catch {
-      /* private windows etc. */
-    }
-    const t = setTimeout(() => setShow(false), DURATION)
-    return () => clearTimeout(t)
-  }, [show])
-
-  if (!show) return null
-  return <IntroScene onClick={() => setShow(false)} />
 }

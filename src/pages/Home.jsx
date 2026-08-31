@@ -1,6 +1,7 @@
 import SectionHeading from '../components/SectionHeading'
 import { site } from '../content/site'
 import { colorway } from '../colorways'
+import { playIntro } from '../introState'
 
 const { brand, home } = site
 
@@ -32,20 +33,47 @@ export default function Home() {
           }}
         />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-24 text-center sm:px-6 sm:py-36">
-          <h1 className="font-display text-4xl uppercase tracking-[0.15em] text-white sm:text-6xl">
+          <h1
+            className={`font-display text-4xl uppercase tracking-[0.15em] text-white sm:text-6xl ${playIntro ? 'intro-text' : ''}`}
+            style={playIntro ? { animationDelay: '1.4s' } : undefined}
+          >
             {home.heroTitle}
           </h1>
-          <img
-            src={colorway.logo}
-            alt="The One Stop Drop logo"
-            className="my-8 h-28 w-auto sm:h-36"
-          />
-          <p className="font-display text-xl uppercase tracking-[0.2em] text-white sm:text-2xl">
+          <div className="relative my-8 flex flex-col items-center">
+            <img
+              src={colorway.logo}
+              alt="The One Stop Drop logo"
+              className={`h-28 w-auto sm:h-36 ${playIntro ? 'intro-drop' : ''}`}
+            />
+            {playIntro && (
+              <div
+                className="intro-ripple absolute -bottom-5 h-8 w-44 rounded-[50%] border border-accent/60"
+                aria-hidden="true"
+              />
+            )}
+          </div>
+          <p
+            className={`font-display text-xl uppercase tracking-[0.2em] text-white sm:text-2xl ${playIntro ? 'intro-text' : ''}`}
+            style={playIntro ? { animationDelay: '1.7s' } : undefined}
+          >
             {brand.name}
           </p>
-          <p className="mt-4 text-sm uppercase tracking-[0.35em] text-accent">{brand.tagline}</p>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-neutral-300">{home.heroLead}</p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <p
+            className={`mt-4 text-sm uppercase tracking-[0.35em] text-accent ${playIntro ? 'intro-text' : ''}`}
+            style={playIntro ? { animationDelay: '2.1s' } : undefined}
+          >
+            {brand.tagline}
+          </p>
+          <p
+            className={`mt-8 max-w-2xl text-lg leading-relaxed text-neutral-300 ${playIntro ? 'intro-text' : ''}`}
+            style={playIntro ? { animationDelay: '2.3s' } : undefined}
+          >
+            {home.heroLead}
+          </p>
+          <div
+            className={`mt-10 flex flex-wrap justify-center gap-4 ${playIntro ? 'intro-text' : ''}`}
+            style={playIntro ? { animationDelay: '2.5s' } : undefined}
+          >
             <Cta to="#partners" primary>
               Partner With Us
             </Cta>

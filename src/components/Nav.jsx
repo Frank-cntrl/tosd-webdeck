@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import { site } from '../content/site'
 import { colorway } from '../colorways'
+import { playIntro } from '../introState'
 
 function Wordmark() {
   return (
@@ -20,7 +21,10 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-edge bg-ink/90 backdrop-blur">
+    <header
+      className={`sticky top-0 z-50 border-b border-edge bg-ink/90 backdrop-blur ${playIntro ? 'intro-text' : ''}`}
+      style={playIntro ? { animationDelay: '2.5s' } : undefined}
+    >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Wordmark />
 

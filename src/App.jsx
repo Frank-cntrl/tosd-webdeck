@@ -2,7 +2,6 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import GalleryPage from './pages/GalleryPage'
 import AnimationPage from './pages/AnimationPage'
-import Intro from './components/Intro'
 import { isGalleryPage, isAnimationPage } from './colorways'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -16,7 +15,6 @@ export default function App() {
   if (isGalleryPage) return <GalleryPage />
   return (
     <div className="flex min-h-screen flex-col bg-ink">
-      <Intro />
       <Nav />
       <main className="flex-1">
         <section id="home" className="scroll-mt-16">
