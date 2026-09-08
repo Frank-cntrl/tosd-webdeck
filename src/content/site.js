@@ -1,7 +1,7 @@
 export const site = {
   brand: {
     name: 'The One Stop Drop',
-    short: 'TOSD',
+    short: 'TOST’D',
     tagline: 'Fine Art. Comedy. Music. Cannabis.',
   },
   nav: {
@@ -15,144 +15,132 @@ export const site = {
     ],
   },
   home: {
-    heroTitle: "TOST'D",
-    heroLead:
-      "TOST'D (The One Stop Drop) is an NYC-based live production and media company integrating fine art, comedy, music, and cannabis into original content and expertly curated events across the city and beyond.",
-    pressQuote: {
-      text: 'One of the better consequences of the much maligned The Forever Now exhibition at MoMA has been to raise the question of what might really constitute significant painting today? With its snarky title, From Now On In, the show of seven mid-career painters at Brian Morris Gallery, attempts, if not a definitive answer, at least a very different kind of conversation.',
-      attribution: 'artcritical',
-    },
-    missionHeading: 'Culture, Curated. Networks, Integrated',
-    mission: [
-      "Built on Brian Morris's 20 years of experience in fine art, comedy, and music, TOST'D produces events and media connecting the cannabis industry to the highest calibre of art and entertainment the world has to offer. An ecosystem of culture and commerce.",
-      'Guided by human creativity and connection, our ethos is rooted in the Sufi mystic Rumi, who reminds us that we are not a drop in the ocean, but the entire ocean in a single drop.',
-      'Welcome to The One Stop Drop.',
+    heroTitle: 'TOST’D',
+    introHeading: 'Introduction',
+    intro: [
+      'Queens native Brian Morris, since stepping into the scene in the early-2000s, has featured hundreds of fine artists, comedians and musicians at his shows and in his galleries. Starting as a performer and dealer, and working up to entrepreneur and curator, The One Stop Drop (TOST’D) is his latest project.',
+      'As legalization and cultural acceptance of cannabis spreads across the country, TOST’D is ahead of the curve producing events and media connecting the cannabis industry to the highest calibre of art and entertainment the city has to offer. An ecosystem of culture and commerce.',
+      'Inspired by human creativity, connection, and collaboration — our ethos is rooted in the Sufi mystic Rumi, who reminds us: you are not a drop in the ocean, you are the entire ocean in a drop.',
     ],
-    highlightsHeading: "What You'll Find at The One Stop Drop",
+    introClosing: 'Welcome to The One Stop Drop.',
+    missionHeading: 'Culture, Curated. Networks, Integrated.',
+    missionQuote:
+      'Providing world-class quality programming of fine art, comedy, music and cannabis.',
+    highlightsHeading: 'What You’ll Find at The One Stop Drop',
     highlights: [
       'Core partnership with select cannabis brands and support for aligned partners',
       'Access to top artists, comedians, musicians, filmmakers, and tastemakers',
       'Events + content that introduce brands to national and global markets ahead of national legalization',
       'Help brands bypass marketing restrictions',
-      "Embed brands into NYC's cultural ecosystem",
+      'Embed brands into NYC’s cultural ecosystem',
     ],
   },
   about: {
-    lead:
-      'Queens native, Brian Morris, has been producing shows, exhibitions, and events in NYC since the mid-2000s — featuring 232 fine artists in his galleries and providing stage time to hundreds of comedians and musicians.',
-    founder: [
-      "Now, TOST'D is ahead of the curve incorporating these networks with the cannabis industry, anticipating legalization in states and markets across the country. Built on personal relationships and reflecting the history of partnership between gallerist and artist, Brian is mostly excited to share the incredible work of his friends with each other and with the world.",
-    ],
-    interview: {
-      lines: [
-        { speaker: 'PT', text: 'Why an art dealer?' },
-        {
-          speaker: 'BM',
-          text: "Because, Pete, I know the deal. I've been around dealers of all kinds all my life. I've seen dealers sell bags of weed through mailbox slots in East New York, and I've seen people make multi-million dollar real estate deals, and everything in between.",
-        },
-        {
-          speaker: '',
-          text: 'I have been surrounded by artists, always have been: painters, writers, dancers, comedians, musicians, actors, rappers and poets.',
-        },
-        {
-          speaker: '',
-          text: "They inspire me to create and live fully, and now I have an opportunity to share their work with the world. I'm a facilitator by nature and I absolutely love being at the confluence for all these creative individuals to come together and create dialogue. There is a wonderful ethos that is happening down here on Chrystie Street. I welcome the collaboration, the debate, the harmony and even the discord – those little moments when egos are diminished and the soul and the spirit of the converging energies involved take over. It's really wonderful and exciting.",
-        },
-      ],
-      attribution: 'NY Arts Magazine',
-    },
+    heading: 'Rooted in NYC Art & Culture',
+    historyEyebrow: 'History',
+    historyHeading: 'Producing in NYC Since the Early-2000s',
+    historyNote: 'Select an era to read more.',
     history: [
       {
-        title: '2004 — The Origin',
+        year: '2004',
+        title: 'The Spark',
         body: [
-          'In 2004, Brian first began performing stand-up comedy and delivering weed for a cannabis service in NYC. This exposed him to New York City art and culture in a way that few can imagine. He has been a fixture of the scene since.',
+          'Before Brian Morris was a fixture of the NYC scene, he performed stand-up and delivered for a cannabis serve. This exposed him to the city’s vast artistic communities and its underground. Around this time he began studying the martial arts, a practice he continues to this day as a student and teacher of Kung Fu.',
         ],
       },
       {
-        title: '2010 — Glasschord',
+        year: '2010–2012',
+        title: 'Glasschord',
         body: [
           'In 2010, Brian became a founding member of Glasschord Art & Culture Magazine. Glasschord produced themed monthly issues beginning with “Rebirth,” featured 100+ artists in its first year, and reached subscribers in 100+ countries — Brian’s first experience building a platform for artists across all genres to connect.',
           'As Glasschord Trustee, Brian produced live events for the community, contributed poetry to the magazine, and conducted interviews with artists like Brandon Stanton of Humans of New York.',
         ],
       },
       {
-        title: '2012–2017 — The Gallery Years',
+        year: '2012–2017',
+        title: 'The Gallery Years',
         body: [
-          'The success of Glasschord presented Brian with the opportunity to open Brian Morris Gallery, Brian Morris Midtown, and Morris-Warren Gallery. Over nearly five years he mounted more than 40 exhibitions in NYC, Brooklyn, Miami, and Paris — receiving praise from artcritical, Hyper Allergic, NY Arts Magazine, and many more.',
+          'The success of Glasschord presented Brian with the opportunity to open Brian Morris Gallery, Brian Morris Midtown, and Morris-Warren Gallery. Over nearly five years he mounted more than 40 exhibitions in NYC, Brooklyn, Miami, and Paris, receiving praise from artcritical, Hyper Allergic, NY Arts Magazine, and more.',
+          'With no traditional background or training in fine art, this outsider gallerist was embraced by the New York scene and developed a reputation for cutting edge exhibitions.',
         ],
-        quote: {
-          text: '“Cuts Noon Light” is a sleek, smart, strikingly cohesive group show at Brian Morris Gallery featuring the work of three very different artists, Andrew Ginzel, Kara Rooney, and Steel Stillman. At once immediately familiar and decidedly alien, its hybrid objects foreground the unseen, the cryptic…',
-          attribution: 'Thomas Micchelli, Hyper Allergic',
+        image: {
+          src: null,
+          label: 'Andrew Ginzel sculpture, Union Square',
         },
-      },
-      {
-        title: '2017–Present — Back to the Stage',
-        body: [
-          'From 2017 to the present, Brian has performed and produced shows throughout NYC — most notably running the first NYC Cannabis Comedy Club at The Huron Club in the legendary Soho Playhouse. Brian recognized then that the culture and legality surrounding cannabis was shifting — and in 2018 he “famously” declared that cannabis was legal within one-hundred yards of himself.',
+        quotes: [
+          {
+            text: '“Cuts Noon Light” is a sleek, smart, strikingly cohesive group show at Brian Morris Gallery featuring the work of three very different artists, Andrew Ginzel, Kara Rooney, and Steel Stillman. At once immediately familiar and decidedly alien, its hybrid objects foreground the unseen, the cryptic…',
+            attribution: 'Thomas Micchelli, Hyper Allergic',
+          },
+          {
+            text: 'One of the better consequences of the much maligned The Forever Now exhibition at MoMA has been to raise the question of what might really constitute significant painting today? With its snarky title, From Now On In, the show of seven mid-career painters at Brian Morris Gallery, attempts, if not a definitive answer, at least a very different kind of conversation.',
+            attribution: 'artcritical',
+          },
         ],
       },
       {
-        title: 'The Original One Stop Shop',
+        year: '2017–Now',
+        title: 'The Slow Burn',
         body: [
-          'During our last prohibition, Huron Club was home to Mayor Jimmy “Beau” Walker’s west side speakeasy — the original “one stop shop.” The phrase first appeared in print describing Mayor Walker’s “one stop shop for out-of-town politicians.” When Brian took it over, he added an article, renaming it “The Huron Club” (THC).',
-          "The theater's history, and the land upon which it was built, reaches back to the Lenape, General George Washington, Aaron Burr, Tammany Hall, Elisabeth Irwin, Edward Albee, and countless legends since. TOST'D honors its attachment to this incredible history and is rooted in NYC's future like none other.",
+          'From 2017 to the present, Brian has performed and produced shows throughout NYC — most notably running the first NYC Cannabis Comedy Club at The Huron Club in the legendary Soho Playhouse. During our last prohibition, The Huron Club was home to Mayor Jimmy “Beau” Walker’s west side speak-easy — the original “one stop shop.” The phrase first appeared in print describing Mayor Walker’s “one stop shop for out-of-town politicians.”',
+          'When Mayor Brian Morris took it over, he added an article, renaming it “The Huron Club” (THC) and it became home to his “weed-easy.” The theater’s history, and the land upon which it was built, reaches back to the Lenape, George Washington, Aaron Burr, Tammany Hall, Elisabeth Irwin, Edward Albee, and countless legends since.',
+          'TOST’D honors its attachment to this history and is rooted in NYC’s future like none other. Brian recognized early that the culture and legality surrounding cannabis was shifting — and in 2018 he “famously” declared that cannabis was legal within one-hundred yards of himself.',
         ],
       },
     ],
+    galleryHeading: 'From the Galleries',
   },
   partners: {
+    eyebrow: 'For Brands & Partners',
     headline: 'An Alliance for Culture and Growth',
     alliance:
-      "A partnership with TOST'D amplifies our collective ability to fundraise, activate, and stay relevant across multiple cultural touchpoints — from cannabis to fine art to lifestyle.",
-    offersLead: 'Culture, Creativity, and Commerce',
+      'Together, we’re not just producing content — we’re creating a living ecosystem of creativity, community and commerce. A partnership with TOST’D amplifies our collective ability to fundraise, activate, and stay relevant across multiple cultural touchpoints.',
+    offersLead: 'What a Partnership Provides',
     offers: [
-      'Immediate cultural integration and influence',
-      'Access to high-profile talent and curated events',
+      'Access to high-profile talent and influence',
       'Shared audiences across influencers, artists, dispensaries and venues',
       'The ability to co-own content, events, and experiences at scale',
     ],
-    offersClosing:
-      "Together, we're not just producing content — we're creating a living ecosystem of culture, creativity, and commerce.",
+    valueHeading: 'A Network Like None Other',
     valueProp:
-      'We awaken and engage a network like none other, reaching the collective audiences of artists, comedians, musicians, influencers, and cannabis brands featured across our online network and live activations. Together, these partnerships form an organic distribution engine that transcends advertising limits — providing our cannabis brand partners with content, marketing, and advertising materials that drive traffic for their brands without the necessity of including cannabis, circumventing cannabis advertising restrictions.',
+      'By providing our cannabis brand partners with content, marketing, and advertising materials that drive traffic for their brands — without the necessity of including cannabis, circumventing cannabis advertising restrictions — we believe we can awaken and engage a network like none other.',
+    askHeading: 'We Are Actively Seeking',
     ask: [
-      {
-        title: 'Cannabis Brand Partnerships',
-        body: 'Licensed cannabis brand partnerships — dispensaries or brands.',
-      },
-      {
-        title: 'Investors',
-        body: 'Investors to support content and network expansion.',
-      },
-      {
-        title: 'Strategic Media Collaborators',
-        body: 'Media partners to expand our content, distribution, and reach.',
-      },
+      'Licensed cannabis brand and dispensary partnerships',
+      'Strategic media partnerships to expand our content, distribution and reach',
+      'Additional seed funding',
     ],
     seed: {
       heading: 'Seed Funding',
-      body: "We're looking for $250k in seed funding to secure our executive team, artists, partners, and sponsors to execute our plan for the first six months of programming — with a $1.5m target over 24 months.",
+      body:
+        '$50k has already been secured. We’re looking for $200k more ($250k total) in seed funding to secure our executive team, artists, partners, and sponsors to execute our plan for the first six months of programming — with a $1.5m target over 24 months.',
       offer:
-        "We offer brand placement, ROI from ticket and content sales, debt, and/or early equity in TOST'D.",
+        'We offer brand placement, ROI from ticket and content sales, debt, and/or early equity in TOST’D.',
     },
     capitalHeading: 'Capital Will Support',
     capital: [
-      'Venue & Location Costs',
-      'Content Production & Event Operations',
-      'Executive Team & Talent',
-      'Brand & Business Development',
       'Marketing',
+      'Executive team and talent',
+      'Brand and business development',
+      'Content production and event operations',
     ],
     capitalNote:
-      'Our existing relationships will keep these costs very low, while allowing us to maintain the highest standards of quality across all of our productions.',
+      'Our existing relationships will keep these costs very low, while allowing us to maintain the highest standards of quality across our productions.',
   },
   plan: {
     eyebrow: 'As Proof of Concept',
     title: 'Six-Month Plan of Action',
     intro: 'Launch strategy & programming.',
+    summary: [
+      'Over its first six months of operations, TOST’D will establish its network of artists, creators, venues, sponsors, cannabis partners, investors, and curators while building its brand through a steady program of live events and original media. The company will launch its corporate structure, trademark, website, social channels, and programming calendar; produce 15–20 comedy, music, and cannabis-focused events across four to five partner venues.',
+      'In month four, we will open our first month-long fine art exhibition, featuring small works by 22 of the most exceptional fine artists on our roster, exploring the ideas surrounding Death and Rebirth, harkening back to Glasschord’s beginnings. We will also host strategic and curated cultural and community events throughout the month, some free, some ticketed — comedy, music, poetry, artist talks, and more.',
+      'TOST’D will serve as Executive Producer for all of our content. We have our finger on the pulse of NYC culture, and, in our digital age, we are proud to champion human artists and interests. Once this foundation is set, we will build towards two more years of programming to scale our production capacity, agency, and long-term business model.',
+    ],
+    detailHeading: 'The Full Breakdown',
+    launchStrategyHeading: 'Launch Strategy',
     launchStrategy: [
       'We will enlist an extraordinary coalition of partners, sponsors, investors, curators, and artists. The One Stop Drop will serve as a nexus for this exceptional foundation. Together we will establish monthly comedy, music, and cannabis events in partnered venues throughout New York City and State — each event may include one or all of these offerings.',
-      "Our first fine art exhibition is scheduled for month four of operations. The pop-up gallery will serve as our base of operations for the duration of the exhibition, with curated cultural and creative events in the gallery space featuring TOST'D artists, comedians and partnered brands. Our marketing strategy will bridge genres and capitalize on the overlapping networks of our partners, and every gallery exhibition will host one night of comedy and music featuring A-list artists.",
+      'Our first fine art exhibition is scheduled for month four of operations. The pop-up gallery will serve as our base of operations for the duration of the exhibition, with curated cultural and creative events in the gallery space featuring TOST’D artists, comedians and partnered brands. Our marketing strategy will bridge genres and capitalize on the overlapping networks of our partners, and every gallery exhibition will host one night of comedy and music featuring A-list artists.',
       'All of our events provide opportunities for filming and creating original content. We will work with our artists and partners across each sector to develop content for our online universe, curated simultaneously with our live programming, on our website and social media channels. We will provide consistent original and existing content from our artist roster — including personalized introductions to each artist from our founder: "Artist Brios."',
       'This structure affords us the opportunity to establish our brand identity across multiple markets in partnership with reputable brands and artists. We will maintain a low overhead with the support of our partnered production companies and venues. Following and adjusting our six-month model across 18 months will lay the foundation for the build-out of our flagship location around the two-year mark.',
       'We have the support of DarkMoon Entertainment, Deja Vu Productions, and 4 Life Entertainment to produce and scale all of our productions. This paradigm allows us to operate within each sector independently, while creating a context that seamlessly integrates fine art, comedy, music, and cannabis at the highest levels across each genre.',
@@ -162,7 +150,7 @@ export const site = {
         id: 'A',
         title: 'Official Invitations',
         body: [
-          "Send official invitations to all participating artists & creators featured in the first 6 months. We've spoken to most of them already.",
+          'Send official invitations to all participating artists & creators featured in the first 6 months. We’ve spoken to most of them already.',
         ],
         bullets: [],
       },
@@ -186,13 +174,13 @@ export const site = {
         id: 'D',
         title: 'Comedy & Music Shows',
         body: [
-          'Roughly 20 shows in 3–4 venues over 6 months, beginning with The Stand. Establish a monthly comedy show in each of our partnered venues, sponsored by a select group of canna brands & dispensaries.',
+          '15–20 shows in 4–5 venues over 6 months, beginning with The Stand. Establish a monthly comedy show in each of our partnered venues, sponsored by a select group of canna brands & dispensaries.',
         ],
         bullets: [
           'Each show will be filmed and directed by our team of directors, including Emmy Award-winning director Thomas Fishwick',
           'Clips from shows may be used for original online content, including a cannabis-friendly comedy mixtape series',
           'Ticket & merch sales, plus the opportunity for our comedy partners to have satellite stages all over the state — providing work for more of their comics and an incubator for young talent',
-          "First show at The Stand — launch for Dave's Buds cannabis brand (one of the owners of The Stand's new Jack Herer boutique brand), The Flowery LES",
+          'First show at The Stand — launch for Dave’s Buds cannabis brand (one of the owners of The Stand’s new Jack Herer boutique brand), The Flowery LES',
         ],
       },
       {
@@ -253,13 +241,14 @@ export const site = {
       },
     ],
     future: {
+      heading: 'Beyond the First Six Months',
       items: [
         'Multiple stages & venues statewide',
         'Release of first documentaries',
         'Comedy MixTape Series — a collab between comedians, fine artists, and musicians',
         'Cinema',
         'Boutique cannabis hotel',
-        "Open new TOST'D locations worldwide",
+        'Open new TOST’D locations worldwide',
       ],
     },
   },
@@ -274,7 +263,7 @@ export const site = {
         format: 'youtube',
         youtubeId: 'M106ESEQAo4',
         logline:
-          "Celebrating the life and career of comedy legend Dom Irrera — and his ongoing experience as a comedian in his winter years, living and performing with Parkinson's disease.",
+          'Celebrating the life and career of comedy legend Dom Irrera — and his ongoing experience as a comedian in his winter years, living and performing with Parkinson’s disease.',
         details: [
           'Featuring Daniel Tosh, Russell Peters, Joey Diaz, and more',
           'Strong potential for major platform acquisition',
@@ -293,10 +282,33 @@ export const site = {
         details: [
           'Directed by Pete Demas of Endless Films, whose documentaries have premiered at Tribeca and Cannes',
           'Blends live performances with raw, behind-the-scenes moments — greenroom stories, road trips, and decades of shared stages',
-          'Brian Morris serves as Executive Producer; presented as a TOSD production',
+          'Brian Morris serves as Executive Producer; presented as a TOST’D production',
         ],
       },
     ],
+  },
+  finalWord: {
+    eyebrow: 'A Final Word From Brian',
+    heading: 'I Know the Deal',
+    date: 'From April 2014',
+    photo: '/photos/brian-rooftop.jpg',
+    photoAlt: 'Brian Morris crouched on a rooftop railing above the Lower East Side',
+    lines: [
+      { speaker: 'Pete Tobey', text: 'Why an art dealer?' },
+      {
+        speaker: 'Brian Morris',
+        text: 'Because, Pete, I know the deal. I’ve been around dealers of all kinds all my life. I’ve seen dealers sell bags of weed through mailbox slots in East New York, and I’ve seen people make multi-million dollar real estate deals, and everything in between.',
+      },
+      {
+        speaker: '',
+        text: 'I have been surrounded by artists, always have been: painters, writers, dancers, comedians, musicians, actors, rappers and poets.',
+      },
+      {
+        speaker: '',
+        text: 'They inspire me to create and live fully, and now I have an opportunity to share their work with the world. I’m a facilitator by nature and I absolutely love being at the confluence for all these creative individuals to come together and create dialogue. There is a wonderful ethos that is happening down here on Chrystie Street. I welcome the collaboration, the debate, the harmony and even the discord – those little moments when egos are diminished and the soul and the spirit of the converging energies involved take over. It’s really wonderful and exciting.',
+      },
+    ],
+    attribution: 'NY Arts Magazine',
   },
   team: {
     note: 'Our team of producers, directors, and creative partners is being finalized. Photos and bios are coming soon.',
@@ -307,6 +319,11 @@ export const site = {
         role: 'Role TBD',
       })),
     ],
+  },
+  executiveSummary: {
+    eyebrow: 'Executive Summary',
+    body:
+      'The One Stop Drop is limitless in its potential and actionable within its business plan. We ask, humbly, for your support for six months of programming to show you what the next 20 years can look like.',
   },
   footer: {
     credit: 'Brian D. Morris — Glasschord Trustee',

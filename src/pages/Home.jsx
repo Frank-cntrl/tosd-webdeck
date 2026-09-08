@@ -64,15 +64,9 @@ export default function Home() {
           >
             {brand.tagline}
           </p>
-          <p
-            className={`mt-8 max-w-2xl text-lg leading-relaxed text-neutral-300 ${playIntro ? 'intro-text' : ''}`}
-            style={playIntro ? { animationDelay: '2.3s' } : undefined}
-          >
-            {home.heroLead}
-          </p>
           <div
             className={`mt-10 flex flex-wrap justify-center gap-4 ${playIntro ? 'intro-text' : ''}`}
-            style={playIntro ? { animationDelay: '2.5s' } : undefined}
+            style={playIntro ? { animationDelay: '2.3s' } : undefined}
           >
             <Cta to="#partners" primary>
               Partner With Us
@@ -82,47 +76,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Press quote */}
+      {/* Introduction */}
       <section className="border-b border-edge">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+          <SectionHeading eyebrow={home.introHeading}>{home.missionHeading}</SectionHeading>
+          <div className="space-y-5 text-base leading-relaxed text-neutral-400">
+            {home.intro.map((p) => (
+              <p key={p.slice(0, 40)}>{p}</p>
+            ))}
+          </div>
+          <p className="mt-10 font-display text-2xl text-white sm:text-3xl">
+            {home.introClosing}
+          </p>
+        </div>
+      </section>
+
+      {/* Mission statement */}
+      <section className="border-b border-edge bg-surface/40">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            Mission Statement
+          </p>
           <blockquote>
-            <p className="font-display text-xl italic leading-relaxed text-white sm:text-2xl">
-              “{home.pressQuote.text}”
+            <p className="font-display text-2xl italic leading-relaxed text-white sm:text-3xl">
+              “{home.missionQuote}”
             </p>
-            <cite className="mt-4 block text-xs uppercase tracking-widest text-neutral-500 not-italic">
-              — {home.pressQuote.attribution}
-            </cite>
           </blockquote>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <SectionHeading eyebrow="Our Mission">{home.missionHeading}</SectionHeading>
-        <div className="max-w-3xl space-y-5 text-base leading-relaxed text-neutral-400">
-          {home.mission.map((p) => (
-            <p key={p.slice(0, 40)}>{p}</p>
-          ))}
-        </div>
-      </section>
-
       {/* Highlights */}
-      <section className="border-y border-edge bg-surface/40">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <SectionHeading eyebrow="Highlights">{home.highlightsHeading}</SectionHeading>
-          <ul className="grid gap-x-12 sm:grid-cols-2">
-            {home.highlights.map((h) => (
-              <li
-                key={h}
-                className="border-t border-edge py-4 text-sm leading-relaxed text-neutral-300"
-              >
-                {h}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <SectionHeading eyebrow="Highlights">{home.highlightsHeading}</SectionHeading>
+        <ul className="grid gap-x-12 sm:grid-cols-2">
+          {home.highlights.map((h) => (
+            <li
+              key={h}
+              className="border-t border-edge py-4 text-sm leading-relaxed text-neutral-300"
+            >
+              {h}
+            </li>
+          ))}
+        </ul>
       </section>
-
     </>
   )
 }
