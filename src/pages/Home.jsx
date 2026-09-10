@@ -37,7 +37,7 @@ export default function Home() {
             className={`font-display text-4xl uppercase tracking-[0.15em] text-white sm:text-6xl ${playIntro ? 'intro-text' : ''}`}
             style={playIntro ? { animationDelay: '1.4s' } : undefined}
           >
-            {home.heroTitle}
+            {brand.name}
           </h1>
           <div className="relative my-8 flex flex-col items-center">
             <img
@@ -56,7 +56,7 @@ export default function Home() {
             className={`font-display text-xl uppercase tracking-[0.2em] text-white sm:text-2xl ${playIntro ? 'intro-text' : ''}`}
             style={playIntro ? { animationDelay: '1.7s' } : undefined}
           >
-            {brand.name}
+            {home.heroTitle}
           </p>
           <p
             className={`mt-4 text-sm uppercase tracking-[0.35em] text-accent ${playIntro ? 'intro-text' : ''}`}
