@@ -7,10 +7,11 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Partners from './pages/Partners'
 import Plan from './pages/Plan'
-import Documentaries from './pages/Documentaries'
-import FinalWord from './pages/FinalWord'
+import Investment from './pages/Investment'
 import Team from './pages/Team'
+import FinalWord from './pages/FinalWord'
 import ExecutiveSummary from './pages/ExecutiveSummary'
+import Documentaries from './pages/Documentaries'
 
 export default function App() {
   if (isAnimationPage) return <AnimationPage />
@@ -31,17 +32,20 @@ export default function App() {
         <section id="plan" className="scroll-mt-16">
           <Plan />
         </section>
-        <section id="documentaries" className="scroll-mt-16">
-          <Documentaries />
-        </section>
-        <section id="final-word" className="scroll-mt-16">
-          <FinalWord />
+        <section id="investment" className="scroll-mt-16">
+          <Investment />
         </section>
         <section id="team" className="scroll-mt-16">
           <Team />
         </section>
+        <section id="final-word" className="scroll-mt-16">
+          <FinalWord />
+        </section>
         <section id="executive-summary" className="scroll-mt-16">
           <ExecutiveSummary />
+        </section>
+        <section id="documentaries" className="scroll-mt-16">
+          <Documentaries />
         </section>
       </main>
       <Footer />

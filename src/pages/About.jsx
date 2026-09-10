@@ -1,4 +1,3 @@
-import PageHeader from '../components/PageHeader'
 import GalleryGrid from '../components/GalleryGrid'
 import Timeline from '../components/Timeline'
 import { prefix } from '../colorways'
@@ -9,8 +8,6 @@ const { about } = site
 export default function About() {
   return (
     <>
-      <PageHeader eyebrow="About" title={about.heading} />
-
       {/* History timeline */}
       <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
         <div className="mb-10">
@@ -18,12 +15,11 @@ export default function About() {
             {about.historyEyebrow}
           </p>
           <h2 className="font-display text-3xl text-white sm:text-4xl">{about.historyHeading}</h2>
-          <p className="mt-3 text-sm text-neutral-500">{about.historyNote}</p>
         </div>
         <Timeline entries={about.history} />
       </section>
 
-      {/* From the galleries */}
+      {/* Galleries */}
       <section className="border-t border-edge">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <h2 className="mb-8 font-display text-3xl text-white sm:text-4xl">

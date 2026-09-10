@@ -5,10 +5,10 @@ import { playIntro } from '../introState'
 
 const { brand, home } = site
 
-function Cta({ to, primary, children }) {
+function Cta({ href, primary, children }) {
   return (
     <a
-      href={to}
+      href={href}
       className={
         primary
           ? 'rounded-sm bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-widest text-ink transition-opacity hover:opacity-85'
@@ -64,30 +64,6 @@ export default function Home() {
           >
             {brand.tagline}
           </p>
-          <div
-            className={`mt-10 flex flex-wrap justify-center gap-4 ${playIntro ? 'intro-text' : ''}`}
-            style={playIntro ? { animationDelay: '2.3s' } : undefined}
-          >
-            <Cta to="#partners" primary>
-              Partner With Us
-            </Cta>
-            <Cta to="#plan">See The Plan</Cta>
-          </div>
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="border-b border-edge">
-        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-          <SectionHeading eyebrow={home.introHeading}>{home.missionHeading}</SectionHeading>
-          <div className="space-y-5 text-base leading-relaxed text-neutral-400">
-            {home.intro.map((p) => (
-              <p key={p.slice(0, 40)}>{p}</p>
-            ))}
-          </div>
-          <p className="mt-10 font-display text-2xl text-white sm:text-3xl">
-            {home.introClosing}
-          </p>
         </div>
       </section>
 
@@ -95,29 +71,48 @@ export default function Home() {
       <section className="border-b border-edge bg-surface/40">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-            Mission Statement
+            {home.missionEyebrow}
           </p>
           <blockquote>
             <p className="font-display text-2xl italic leading-relaxed text-white sm:text-3xl">
               “{home.missionQuote}”
             </p>
           </blockquote>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            {home.ctas.map((c) => (
+              <Cta key={c.href} href={c.href} primary={c.primary}>
+                {c.label}
+              </Cta>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <SectionHeading eyebrow="Highlights">{home.highlightsHeading}</SectionHeading>
-        <ul className="grid gap-x-12 sm:grid-cols-2">
-          {home.highlights.map((h) => (
-            <li
-              key={h}
-              className="border-t border-edge py-4 text-sm leading-relaxed text-neutral-300"
-            >
-              {h}
-            </li>
-          ))}
-        </ul>
+      {/* Introduction */}
+      <section className="border-b border-edge">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+          <SectionHeading eyebrow={home.introEyebrow}>{home.introHeading}</SectionHeading>
+          <div className="space-y-5 text-base leading-relaxed text-neutral-400">
+            {home.intro.map((p) => (
+              <p key={p.slice(0, 40)}>{p}</p>
+            ))}
+            <p className="text-white">{home.introClosing}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Rumi */}
+      <section className="border-b border-edge bg-surface/40">
+        <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
+          <blockquote>
+            <p className="font-display text-xl italic leading-relaxed text-white sm:text-2xl">
+              “{home.rumi.text}”
+            </p>
+            <cite className="mt-4 block text-xs uppercase tracking-widest text-neutral-500 not-italic">
+              — {home.rumi.attribution}
+            </cite>
+          </blockquote>
+        </div>
       </section>
     </>
   )
