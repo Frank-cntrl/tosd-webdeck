@@ -76,20 +76,18 @@ export default function Timeline({ entries }) {
                   ))}
 
                   {entry.image && (
-                    <figure className="pt-2">
+                    <div className="pt-2">
                       {entry.image.src ? (
                         <img
                           src={entry.image.src}
                           alt={entry.image.label}
-                          className="w-full rounded-md"
+                          loading="lazy"
+                          className="mx-auto w-full max-w-sm rounded-md"
                         />
                       ) : (
                         <Placeholder label={entry.image.label} ratio="aspect-[4/3]" />
                       )}
-                      <figcaption className="mt-2 text-xs uppercase tracking-widest text-neutral-600">
-                        {entry.image.label}
-                      </figcaption>
-                    </figure>
+                    </div>
                   )}
 
                   {entry.quotes?.map((q) => (

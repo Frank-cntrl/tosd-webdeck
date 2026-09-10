@@ -63,7 +63,7 @@ export const site = {
           'With no traditional background or training in fine art, this outsider gallerist was embraced by the New York scene and developed a reputation for cutting edge exhibitions.',
         ],
         image: {
-          src: null,
+          src: '/photos/ginzel-union-square.jpg',
           label: 'Andrew Ginzel sculpture, Union Square',
         },
         quotes: [
