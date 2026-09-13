@@ -31,12 +31,30 @@ export default function Gate({ onUnlock }) {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-ink px-4">
-      <img src={colorway.logo} alt="" className="h-20 w-auto" />
-      <h1 className="mt-6 font-display text-2xl uppercase tracking-[0.2em] text-white text-center">
+      <div className="relative flex flex-col items-center">
+        <img src={colorway.logo} alt="" className="intro-drop h-20 w-auto" />
+        <div
+          className="intro-ripple absolute -bottom-4 h-6 w-32 rounded-[50%] border border-accent/60"
+          aria-hidden="true"
+        />
+      </div>
+      <h1
+        className="intro-text mt-6 font-display text-2xl uppercase tracking-[0.2em] text-white text-center"
+        style={{ animationDelay: '1.4s' }}
+      >
         The One Stop Drop
       </h1>
-      <p className="mt-3 text-xs uppercase tracking-[0.3em] text-neutral-500">Private Preview</p>
-      <form onSubmit={submit} className="mt-10 flex w-full max-w-xs flex-col gap-3">
+      <p
+        className="intro-text mt-3 text-xs uppercase tracking-[0.3em] text-neutral-500"
+        style={{ animationDelay: '1.7s' }}
+      >
+        Private Preview
+      </p>
+      <form
+        onSubmit={submit}
+        className="intro-text mt-10 flex w-full max-w-xs flex-col gap-3"
+        style={{ animationDelay: '2s' }}
+      >
         <input
           type="password"
           value={value}
