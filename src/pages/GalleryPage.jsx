@@ -28,8 +28,8 @@ export default function GalleryPage() {
           </p>
           <h1 className="font-display text-4xl text-white sm:text-5xl">Gallery</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-400">
-            Exhibitions, artworks, and moments from two decades of shows and events across NYC and
-            beyond. Click any photo to enlarge it.
+            Exhibitions, artworks, and lineups from two decades of shows and events across NYC.
+            Click any photo to enlarge it.
           </p>
         </div>
       </section>
