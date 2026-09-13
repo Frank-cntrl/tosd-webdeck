@@ -108,10 +108,10 @@ export default function Home() {
               “{home.rumi.text}”
             </p>
             <cite className="mt-4 block text-xs uppercase tracking-widest text-neutral-500 not-italic">
-              — {home.rumi.attribution}
+              {home.rumi.attribution}
             </cite>
           </blockquote>
-          <img src={colorway.logo} alt="" className="mx-auto mt-6 h-8 w-auto" />
+          <img src={colorway.logo} alt="" className="mx-auto mt-5 h-8 w-auto" />
         </div>
       </section>
     </>
