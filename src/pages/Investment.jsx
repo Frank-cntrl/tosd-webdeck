@@ -33,6 +33,7 @@ export default function Investment() {
         </ul>
         <div className="mt-12 max-w-3xl space-y-5 text-base leading-relaxed text-neutral-300">
           <p>{investment.seed}</p>
+          <p>{investment.timing}</p>
           <p>{investment.closing}</p>
         </div>
       </section>

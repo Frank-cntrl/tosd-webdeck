@@ -114,9 +114,11 @@ export const site = {
       'Additional seed funding',
     ],
     seed:
-      '$50k has already been secured. We’re looking for $200k more ($250k total) in seed funding to secure our executive team, artists, partners, and sponsors to execute our plan for the first six months of programming — with a $1.5m target over 24 months. We offer brand placement, ROI from ticket and content sales, debt, and/or early equity in TOST’D.',
+      '$50k has already been secured. We’re looking for $200k more ($250k total) in seed funding to secure our executive team, artists, partners, and sponsors to execute our plan for the first six months of programming — with a $1.5m target over 24 months. We offer brand placement, ROI from ticket, cannabis and content sales, debt, and/or early equity in TOST’D.',
+    timing:
+      'In addition, on-site consumption licenses in New York are projected to be available and effective in 2027, so our ambitions and timing are perfectly aligned with this development and the range of opportunities it will present.',
     closing:
-      'With your support, we will produce an incredible 6 months of programming and position ourselves as leaders within these industries, laying the foundation for our flagship location, including the first TOST’D Dispensary.',
+      'With your support, we will produce an incredible 6 months of programming and position ourselves as leaders within these industries, laying the foundation to work with a licensed cannabis retailer to open our flagship location, our first TOST’D Dispensary.',
     capitalEyebrow: 'Use of Funds',
     capitalHeading: 'Capital Will Support',
     capital: [
