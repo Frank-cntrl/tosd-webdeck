@@ -197,7 +197,6 @@ export const site = {
     attribution: 'NY Arts Magazine',
   },
   team: {
-    note: 'Our team of producers, directors, and creative partners is being finalized. Photos and bios are coming soon.',
     members: [
       { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian.jpg' },
       ...Array.from({ length: 7 }, () => ({
