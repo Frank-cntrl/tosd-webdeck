@@ -64,7 +64,7 @@ export default function Gate({ onUnlock }) {
           }}
           placeholder="Password"
           autoFocus
-          className="rounded-sm border border-edge bg-surface px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-neutral-600 focus:border-accent"
+          className="rounded-sm border border-edge bg-surface px-4 py-3 text-base text-white outline-none transition-colors placeholder:text-neutral-600 focus:border-accent"
         />
         <button
           type="submit"
