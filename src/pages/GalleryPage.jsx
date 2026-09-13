@@ -24,7 +24,7 @@ export default function GalleryPage() {
       <section className="border-b border-edge">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-            From the Galleries
+            A Glimpse from the Past
           </p>
           <h1 className="font-display text-4xl text-white sm:text-5xl">Gallery</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-400">
