@@ -4,7 +4,12 @@ import Placeholder from './Placeholder'
 function Quote({ text, attribution }) {
   return (
     <blockquote className="border-l-2 border-accent pl-5">
-      <p className="font-display text-base italic leading-relaxed text-white sm:text-lg">{text}</p>
+      <p
+        className="text-base italic leading-relaxed text-white sm:text-lg"
+        style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+      >
+        {text}
+      </p>
       <cite className="mt-3 block text-xs uppercase tracking-widest text-neutral-500 not-italic">
         — {attribution}
       </cite>
