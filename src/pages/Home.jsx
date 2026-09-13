@@ -103,6 +103,7 @@ export default function Home() {
       {/* Rumi */}
       <section className="border-b border-edge bg-surface/40">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
+          <img src={colorway.logo} alt="" className="mx-auto mb-6 h-12 w-auto" />
           <blockquote>
             <p className="font-display text-xl italic leading-relaxed text-white sm:text-2xl">
               “{home.rumi.text}”
@@ -111,7 +112,6 @@ export default function Home() {
               {home.rumi.attribution}
             </cite>
           </blockquote>
-          <img src={colorway.logo} alt="" className="mx-auto mt-5 h-8 w-auto" />
         </div>
       </section>
     </>
