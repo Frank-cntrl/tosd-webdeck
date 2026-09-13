@@ -27,7 +27,8 @@ export const site = {
     introHeading: 'Culture, Curated. Networks, Integrated.',
     intro: [
       'The One Stop Drop is a NYC-based production and media company that produces expertly curated events and original content.',
-      'Representing an incredible roster of artists and creators, we are ahead of the curve connecting the cannabis industry to the highest calibre of art and entertainment the city has to offer. An ecosystem of culture and commerce. Looking to the future, we have a potential partner offering 45% of their cannabis retail license to attach the dispensary to our company.',
+      'Representing an incredible roster of artists and creators, we are ahead of the curve connecting the cannabis industry to the highest calibre of art and entertainment the city has to offer. An ecosystem of culture and commerce.',
+      'Looking to the future, we have a potential partner offering 40% of their cannabis retail license to collaborate with us on a shared flagship dispensary/venue. We are also positioning ourselves to take advantage of on-site consumption licenses, which are likely coming to New York in 2027.',
       'Queens native Brian Morris, since stepping into the scene in the early-2000s, has featured hundreds of fine artists, comedians and musicians at his shows and in his galleries. Starting out as a performer and dealer, and working up to entrepreneur and curator, The One Stop Drop (TOST’D) is his latest project.',
     ],
     introClosing: 'Welcome to The One Stop Drop.',
