@@ -96,7 +96,6 @@ export default function Home() {
             {home.intro.map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
-            <p className="text-white">{home.introClosing}</p>
           </div>
         </div>
       </section>

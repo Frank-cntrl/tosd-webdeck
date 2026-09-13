@@ -31,7 +31,6 @@ export const site = {
       'Looking to the future, we have a potential partner offering 40% of their cannabis retail license to collaborate with us on a shared flagship dispensary/venue. We are also positioning ourselves to take advantage of on-site consumption licenses, which are likely coming to New York in 2027.',
       'Queens native Brian Morris, since stepping into the scene in the early-2000s, has featured hundreds of fine artists, comedians and musicians at his shows and in his galleries. Starting out as a performer and dealer, and working up to entrepreneur and curator, The One Stop Drop (TOST’D) is his latest project.',
     ],
-    introClosing: 'Welcome to The One Stop Drop.',
     rumi: {
       text: 'You are not a drop in the ocean, you are the entire ocean in a drop.',
       attribution: 'Rumi',
