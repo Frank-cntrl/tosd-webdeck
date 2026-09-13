@@ -87,7 +87,7 @@ export const site = {
         ],
       },
     ],
-    galleryHeading: 'A Glimpse at the Past and the Future From the Galleries',
+    galleryHeading: 'A Glimpse at the Past and the Future',
   },
   partners: {
     eyebrow: 'An Alliance for Culture and Growth',
