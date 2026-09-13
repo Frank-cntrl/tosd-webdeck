@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import Gate, { isUnlocked } from './components/Gate'
 import GalleryPage from './pages/GalleryPage'
 import AnimationPage from './pages/AnimationPage'
 import { isGalleryPage, isAnimationPage } from './colorways'
@@ -14,6 +16,8 @@ import ExecutiveSummary from './pages/ExecutiveSummary'
 import Documentaries from './pages/Documentaries'
 
 export default function App() {
+  const [unlocked, setUnlocked] = useState(isUnlocked)
+  if (!unlocked) return <Gate onUnlock={() => setUnlocked(true)} />
   if (isAnimationPage) return <AnimationPage />
   if (isGalleryPage) return <GalleryPage />
   return (
