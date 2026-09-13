@@ -159,6 +159,7 @@ export const site = {
         mediaLabel: 'Official Site',
         format: 'site',
         url: 'https://mentors2026.lovable.app/',
+        video: '/media/mentors-hero.mp4',
         tagline: 'Three Cities. Three Legends. One Journey.',
         logline:
           'A personal look inside the lives, careers, and ubiquitous influence on the comedy scene of legendary comedians Greer Barnes (NYC), Keith Robinson (Philly), and Tony Woods (DC) — as they return to their hometowns for a three-city tour, hosted by Matt Richards.',
