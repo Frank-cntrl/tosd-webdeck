@@ -111,6 +111,7 @@ export default function Home() {
               — {home.rumi.attribution}
             </cite>
           </blockquote>
+          <img src={colorway.logo} alt="" className="mx-auto mt-6 h-8 w-auto" />
         </div>
       </section>
     </>
