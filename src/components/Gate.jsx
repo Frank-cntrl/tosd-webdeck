@@ -17,7 +17,7 @@ export default function Gate({ onUnlock }) {
 
   const submit = (e) => {
     e.preventDefault()
-    if (value.trim().toLowerCase() === 'brian') {
+    if (value.trim() === 'JandC456') {
       try {
         sessionStorage.setItem(KEY, '1')
       } catch {
