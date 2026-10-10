@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Gate, { isUnlocked } from './components/Gate'
 import GalleryPage from './pages/GalleryPage'
 import AnimationPage from './pages/AnimationPage'
-import { isGalleryPage, isAnimationPage } from './colorways'
+import { isGalleryPage, isAnimationPage, isOctoberMockup } from './colorways'
 import Home from './pages/Home'
 import About from './pages/About'
 import Partners from './pages/Partners'
@@ -14,10 +14,12 @@ import Team from './pages/Team'
 import FinalWord from './pages/FinalWord'
 import ExecutiveSummary from './pages/ExecutiveSummary'
 import Documentaries from './pages/Documentaries'
+import OctoberMockup from './pages/OctoberMockup'
 
 export default function App() {
   const [unlocked, setUnlocked] = useState(isUnlocked)
   if (!unlocked) return <Gate onUnlock={() => setUnlocked(true)} />
+  if (isOctoberMockup) return <OctoberMockup />
   if (isAnimationPage) return <AnimationPage />
   if (isGalleryPage) return <GalleryPage />
   return (

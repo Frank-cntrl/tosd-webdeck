@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { colorway } from './../colorways'
 
 const KEY = 'tostd-gate'
+const PASSWORDS = ['JandC456', 'frank']
 
 export function isUnlocked() {
   try {
@@ -17,7 +18,7 @@ export default function Gate({ onUnlock }) {
 
   const submit = (e) => {
     e.preventDefault()
-    if (value.trim() === 'JandC456') {
+    if (PASSWORDS.includes(value.trim())) {
       try {
         sessionStorage.setItem(KEY, '1')
       } catch {

@@ -15,3 +15,4 @@ export const colorway = cwSeg ? colorways[cwSeg] : colorways.default
 export const prefix = cwSeg ? `/${cwSeg}` : ''
 export const isGalleryPage = segs.includes('gallery')
 export const isAnimationPage = segs.includes('animation')
+export const isOctoberMockup = segs.includes('octobermockup')
