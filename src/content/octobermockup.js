@@ -14,7 +14,8 @@ export const mock = {
   },
   welcome: {
     eyebrow: 'Welcome',
-    heading: 'Welcome to The One Stop Drop (TOST’D)',
+    // Set as a three-line stanza; the name and short form come from site.brand.
+    lead: 'Welcome to',
     body: 'As we turn the page on another era of prohibition in New York City, The One Stop Drop (TOST’D) is here to provide space for people to enjoy the legalization of cannabis along with world-class artists, comedians and musicians. A weedeasy. So enjoy the art, grab a drink, and feel free to light up — everybody’s chill.',
   },
   intro: {

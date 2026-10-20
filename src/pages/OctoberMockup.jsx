@@ -62,7 +62,15 @@ export default function OctoberMockup() {
       <section className="border-b border-edge bg-surface/40">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6">
           <Eyebrow>{mock.welcome.eyebrow}</Eyebrow>
-          <h2 className="font-display text-3xl text-white sm:text-4xl">{mock.welcome.heading}</h2>
+          <h2 className="font-display uppercase leading-tight text-white">
+            <span className="block text-base tracking-[0.3em] text-neutral-400 sm:text-lg">
+              {mock.welcome.lead}
+            </span>
+            <span className="mt-4 block text-3xl tracking-[0.12em] sm:text-5xl">{brand.name}</span>
+            <span className="mt-4 block text-xl tracking-[0.3em] text-accent sm:text-2xl">
+              {brand.short}
+            </span>
+          </h2>
           <p className="mt-8 text-lg leading-relaxed text-neutral-300">{mock.welcome.body}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
