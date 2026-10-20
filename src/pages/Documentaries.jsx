@@ -3,7 +3,7 @@ import { site } from '../content/site'
 
 const { documentaries } = site
 
-function Media({ film }) {
+export function Media({ film }) {
   if (film.format === 'youtube') {
     return (
       <iframe

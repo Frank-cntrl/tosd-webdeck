@@ -3,11 +3,15 @@ import Timeline from '../components/Timeline'
 import HeroMontage from '../components/mock/HeroMontage'
 import Panel from '../components/mock/Panel'
 import Tbd from '../components/mock/Tbd'
+import { Media } from './Documentaries'
 import { colorway, prefix } from '../colorways'
 import { site } from '../content/site'
 import { mock } from '../content/octobermockup'
 
-const { brand, home, about, partners, plan, investment } = site
+// History, documentaries and the executive summary come from site.js because
+// the October document reproduces them unchanged. Everything else comes from
+// octobermockup.js, which deliberately diverges from the live deck at /.
+const { brand, about, documentaries, executiveSummary, footer } = site
 
 function Eyebrow({ children }) {
   return (
@@ -27,6 +31,31 @@ function Bullets({ items }) {
         </li>
       ))}
     </ul>
+  )
+}
+
+// Shared by the core team and the consultant roster. Falls back to a dashed
+// square for everyone whose headshot we don't have yet.
+function PersonCard({ person }) {
+  const line = person.role || person.credit
+  return (
+    <div>
+      {person.photo ? (
+        <img
+          src={person.photo}
+          alt={person.name}
+          className="aspect-square w-full rounded-md object-cover"
+        />
+      ) : (
+        <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink" />
+      )}
+      <p className="mt-3 text-sm text-white">{person.name}</p>
+      {line && <p className="text-xs leading-relaxed text-neutral-500">{line}</p>}
+      {person.bio && (
+        <p className="mt-3 text-sm leading-relaxed text-neutral-400">{person.bio}</p>
+      )}
+      {person.bioTbd && <Tbd className="mt-3">{person.bioTbd}</Tbd>}
+    </div>
   )
 }
 
@@ -61,7 +90,7 @@ export default function OctoberMockup() {
             {brand.name}
           </h1>
           <p className="mt-4 font-display text-xl uppercase tracking-[0.2em] text-white sm:text-2xl">
-            {home.heroTitle}
+            {brand.short}
           </p>
           <p className="mt-6 text-sm uppercase tracking-[0.35em] text-accent">
             {mock.hero.pillars.join(' · ')}
@@ -69,16 +98,12 @@ export default function OctoberMockup() {
         </div>
       </section>
 
-      {/* Mission + CTAs */}
+      {/* Welcome — the weedeasy invitation, plus the CTAs */}
       <section className="border-b border-edge bg-surface/40">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6">
-          <Eyebrow>Mission Statement</Eyebrow>
-          <blockquote>
-            <p className="font-display text-2xl italic leading-relaxed text-white sm:text-3xl">
-              “{home.missionQuote}”
-            </p>
-          </blockquote>
-          <Tbd className="mx-auto mt-6 max-w-xl">{mock.mission.tbd}</Tbd>
+          <Eyebrow>{mock.welcome.eyebrow}</Eyebrow>
+          <h2 className="font-display text-3xl text-white sm:text-4xl">{mock.welcome.heading}</h2>
+          <p className="mt-8 text-lg leading-relaxed text-neutral-300">{mock.welcome.body}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
               href="#plan"
@@ -106,14 +131,13 @@ export default function OctoberMockup() {
         />
         <div className="absolute inset-0 bg-ink/85" aria-hidden="true" />
         <div className="relative mx-auto max-w-3xl px-4 py-24 sm:px-6">
-          <Eyebrow>Introduction</Eyebrow>
-          <h2 className="font-display text-3xl text-white sm:text-4xl">{home.introHeading}</h2>
+          <Eyebrow>{mock.intro.eyebrow}</Eyebrow>
+          <h2 className="font-display text-3xl text-white sm:text-4xl">{mock.intro.heading}</h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-300">
-            {home.intro.map((p) => (
+            {mock.intro.body.map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
           </div>
-          <Tbd className="mt-10">{mock.pillars.tbd}</Tbd>
         </div>
       </section>
 
@@ -129,43 +153,39 @@ export default function OctoberMockup() {
         </div>
       </section>
 
-      {/* The Opportunity — full-bleed, copy in the negative space */}
+      {/* Value Proposition — full-bleed, copy in the negative space */}
       <section className="relative overflow-hidden border-b border-edge">
         <img
-          src={mock.opportunity.image}
+          src={mock.value.image}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30"
           aria-hidden="true"
         />
-        <div className="relative mx-auto max-w-6xl px-4 py-32 sm:px-6">
-          <div className="max-w-lg">
-            <Eyebrow>{mock.opportunity.eyebrow}</Eyebrow>
+        <div className="relative mx-auto max-w-6xl px-4 py-28 sm:px-6">
+          <div className="max-w-xl">
+            <Eyebrow>{mock.value.eyebrow}</Eyebrow>
             <p className="font-display text-2xl leading-relaxed text-white sm:text-3xl">
-              {mock.opportunity.body}
+              {mock.value.lead}
             </p>
+            <p className="mt-8 text-base leading-relaxed text-neutral-300">{mock.value.body}</p>
           </div>
         </div>
       </section>
 
-      {/* Brian — bio, article, gallery slider */}
+      {/* Brian — bio and the gallery */}
       <section className="border-b border-edge">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <Eyebrow>{mock.brian.eyebrow}</Eyebrow>
           <div className="mt-8 grid items-start gap-10 lg:grid-cols-2">
-            <img
-              src={mock.brian.photo}
-              alt={mock.brian.photoAlt}
-              className="w-full rounded-md"
-            />
+            <img src={mock.brian.photo} alt={mock.brian.photoAlt} className="w-full rounded-md" />
             <div className="space-y-8">
               <Tbd>{mock.brian.bioTbd}</Tbd>
-              <Tbd>{mock.brian.articleTbd}</Tbd>
               <div>
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">
-                  {mock.brian.sliderLabel}
+                  {mock.brian.galleryLabel}
                 </p>
                 <GalleryGrid limit={4} />
                 <div className="mt-6">
@@ -182,17 +202,33 @@ export default function OctoberMockup() {
         </div>
       </section>
 
-      {/* Other staff */}
+      {/* The People Behind The Drop */}
+      <section id="people" className="border-b border-edge scroll-mt-16">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <Eyebrow>{mock.people.eyebrow}</Eyebrow>
+          <div className="mt-8 grid items-start gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {mock.people.members.map((m) => (
+              <PersonCard key={m.name} person={m} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Consultants, curators and early featured artists */}
       <section className="border-b border-edge">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <Eyebrow>{mock.staff.eyebrow}</Eyebrow>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {mock.staff.members.map((m, i) => (
-              <div key={i}>
-                <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink" />
-                <p className="mt-3 text-sm text-white">{m.name}</p>
-                <p className="text-xs text-neutral-500">{m.role}</p>
-                <Tbd className="mt-3">{m.creditTbd}</Tbd>
+          <Eyebrow>{mock.roster.eyebrow}</Eyebrow>
+          <div className="mt-10 space-y-14">
+            {mock.roster.groups.map((g) => (
+              <div key={g.title}>
+                <h3 className="mb-6 border-b border-edge pb-3 font-display text-2xl text-white">
+                  {g.title}
+                </h3>
+                <div className="grid items-start gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+                  {g.people.map((p) => (
+                    <PersonCard key={p.name} person={p} />
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -205,33 +241,26 @@ export default function OctoberMockup() {
       </section>
 
       {/* Closing — dropdowns like history */}
-      <section id="closing" className="scroll-mt-16">
+      <section id="closing" className="border-b border-edge scroll-mt-16">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-          <Panel title={partners.headline} defaultOpen>
-            <p className="mb-6 text-base leading-relaxed text-neutral-400">{partners.alliance}</p>
-            <Bullets items={partners.offers} />
+          <Panel title={mock.partners.headline} defaultOpen>
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              {mock.partners.eyebrow}
+            </p>
+            <Bullets items={mock.partners.offers} />
           </Panel>
 
-          <Panel title={plan.title}>
-            <div className="space-y-5 text-base leading-relaxed text-neutral-400">
-              {plan.summary.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
-              ))}
-            </div>
+          <Panel title={mock.plan.title}>
+            <p className="text-base leading-relaxed text-neutral-400">{mock.plan.body}</p>
           </Panel>
 
-          <Panel title={investment.askHeading}>
-            <Bullets items={investment.ask} />
-            <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-300">
-              <p>{investment.seed}</p>
-              {investment.timing && <p>{investment.timing}</p>}
-              <p>{investment.closing}</p>
-            </div>
+          <Panel title={mock.seeking.title}>
+            <p className="text-base leading-relaxed text-neutral-300">{mock.seeking.body}</p>
           </Panel>
 
-          <Panel title={investment.capitalHeading}>
+          <Panel title={mock.capital.title}>
             <ul className="grid gap-x-10 gap-y-3 sm:grid-cols-2">
-              {investment.capital.map((c) => (
+              {mock.capital.items.map((c) => (
                 <li key={c} className="flex items-center gap-3 text-sm text-neutral-300">
                   <span className="h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                   {c}
@@ -239,17 +268,74 @@ export default function OctoberMockup() {
               ))}
             </ul>
             <p className="mt-8 text-base italic leading-relaxed text-neutral-400">
-              {investment.capitalNote}
+              {mock.capital.note}
             </p>
           </Panel>
         </div>
       </section>
 
-      {/* Repeat call to action */}
-      <section className="border-t border-edge bg-surface/40">
+      {/* From April 2014 — the NY Arts Magazine interview */}
+      <section className="border-b border-edge bg-surface/40">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+          <Eyebrow>{mock.article.eyebrow}</Eyebrow>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-300">
+            {mock.article.lines.map((l) => (
+              <p key={l.text.slice(0, 40)}>
+                {l.speaker && <span className="font-semibold text-accent">{l.speaker}: </span>}
+                <span className={l.speaker ? '' : 'text-neutral-400'}>{l.text}</span>
+              </p>
+            ))}
+          </div>
+          <p className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
+            — {mock.article.attribution}
+          </p>
+        </div>
+      </section>
+
+      {/* Documentaries */}
+      <section className="border-b border-edge">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <Eyebrow>In Production</Eyebrow>
+          <h2 className="font-display text-3xl text-white sm:text-4xl">Documentaries</h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-400">
+            {documentaries.intro}
+          </p>
+          <div className="mt-16 space-y-20">
+            {documentaries.films.map((film) => (
+              <div key={film.title} className="grid items-start gap-10 lg:grid-cols-2">
+                <Media film={film} />
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+                    {film.kind}
+                  </p>
+                  <h3 className="font-display text-3xl text-white sm:text-4xl">{film.title}</h3>
+                  <p className="mt-5 text-base leading-relaxed text-neutral-400">{film.logline}</p>
+                  <ul className="mt-6 space-y-3">
+                    {film.details.map((d) => (
+                      <li
+                        key={d.slice(0, 40)}
+                        className="flex items-start gap-3 text-sm leading-relaxed text-neutral-300"
+                      >
+                        <span className="mt-1 text-accent" aria-hidden="true">
+                          —
+                        </span>
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Executive summary + repeat call to action */}
+      <section className="bg-surface/40">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 px-4 py-20 text-center sm:px-6">
+          <Eyebrow>{executiveSummary.eyebrow}</Eyebrow>
           <p className="font-display text-2xl leading-relaxed text-white sm:text-3xl">
-            {site.executiveSummary.body}
+            {executiveSummary.body}
           </p>
           <a
             href="#closing"
@@ -262,7 +348,7 @@ export default function OctoberMockup() {
 
       <footer className="border-t border-edge">
         <div className="mx-auto max-w-6xl px-4 py-10 text-center text-xs text-neutral-600 sm:px-6">
-          October mockup · {site.footer.credit}
+          October mockup · {footer.credit}
         </div>
       </footer>
     </div>
