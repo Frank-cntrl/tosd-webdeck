@@ -89,7 +89,11 @@ export const mock = {
       {
         title: 'Fine Art',
         people: [
-          { name: 'Min Kim', credit: '' },
+          {
+            name: 'Min Kim',
+            credit: 'Fine Artist & Designer',
+            bio: 'Min Kim is a Fine Artist and Designer featured in museums, galleries and luxury brands, including MoMA PS1, Tiffany, Chanel, Louis Vuitton and more.',
+          },
           { name: 'Noah Post', credit: 'Artist / Curator / Creative' },
           { name: 'Philip Knoll', credit: 'Artist / Curator' },
           { name: 'Sue Knoll', credit: 'Artist / Curator' },
@@ -120,7 +124,11 @@ export const mock = {
       {
         title: 'Film & Documentary',
         people: [
-          { name: 'Jamal Hodge', credit: '' },
+          {
+            name: 'Jamal Hodge',
+            credit: 'Writer & Director',
+            bio: 'Jamal Hodge is a Bram Stoker Award-winning writer, a Nebula Award finalist, and an award-winning director. His producing credits include the Academy Award-nominated documentary Armed Only With a Camera: The Life & Death of Brent Renaud (co-producer) and the animated feature film Pierre the Pigeon Hawk.',
+          },
           { name: 'Brian Licata', credit: '' },
           { name: 'Pete Demas', credit: '' },
         ],
