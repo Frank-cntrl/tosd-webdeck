@@ -15,4 +15,7 @@ export const colorway = cwSeg ? colorways[cwSeg] : colorways.default
 export const prefix = cwSeg ? `/${cwSeg}` : ''
 export const isGalleryPage = segs.includes('gallery')
 export const isAnimationPage = segs.includes('animation')
-export const isOctoberMockup = segs.includes('octobermockup')
+const octIdx = segs.indexOf('octobermockup')
+export const isOctoberMockup = octIdx !== -1
+// /octobermockup/<slug> serves one person's page instead of the full mockup.
+export const personSlug = octIdx === -1 ? null : (segs[octIdx + 1] ?? null)

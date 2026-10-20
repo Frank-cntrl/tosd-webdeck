@@ -3,7 +3,6 @@
 // deliberately diverges from it; do not "sync" the two.
 // Pulled from site.js unchanged (the document matches it): the history
 // timeline, the documentaries, and the executive summary.
-// `tbd` entries mark copy the document did not supply.
 
 export const mock = {
   hero: {
@@ -18,9 +17,6 @@ export const mock = {
     heading: 'Welcome to The One Stop Drop (TOST’D)',
     body: 'As we turn the page on another era of prohibition in New York City, The One Stop Drop (TOST’D) is here to provide space for people to enjoy the legalization of cannabis along with world-class artists, comedians and musicians. A weedeasy. So enjoy the art, grab a drink, and feel free to light up — everybody’s chill.',
   },
-  cta: {
-    tbd: 'Reworked primary CTA — needs a conversation',
-  },
   intro: {
     eyebrow: 'Introduction',
     heading: 'Culture, Curated. Networks, Integrated.',
@@ -28,9 +24,6 @@ export const mock = {
       'TOST’D is a cannabis hospitality and entertainment company that curates events and original content in collaboration with dispensaries and in preparation for cannabis consumption licenses, available in 2027 in New York State.',
       'Queens’ own Brian Morris started out as a dealer and performer and grew into a curator and entrepreneur. TOST’D is his latest venture. Since stepping into the art scene in the early-2000s, Brian has featured hundreds of fine artists, comedians and musicians at his shows and in his galleries. Now, together, we are ready to connect the cannabis industry to the highest caliber of art and entertainment the city has to offer.',
     ],
-  },
-  historyNote: {
-    tbd: 'Short note on why our history matters',
   },
   // Carried by the full-bleed slot the mockup used for "The Opportunity".
   value: {
@@ -43,7 +36,6 @@ export const mock = {
     eyebrow: 'Brian Morris',
     photo: '/photos/brian-rooftop.jpg',
     photoAlt: 'Brian Morris crouched on a rooftop railing above the Lower East Side',
-    bioTbd: 'Condensed founder bio',
     galleryLabel: 'A Glimpse at the Past',
   },
   partners: {
@@ -110,8 +102,8 @@ export const mock = {
             name: 'Tait Winston',
             credit: 'Comedy Artist / Producer / Writer',
             // October notes: "may take on a role within executive team -
-            // bio on previous deck". No such bio exists in this repo.
-            bioTbd: 'Tait Winston bio \u2014 from the previous deck',
+            // bio on previous deck". That bio is not in this repo or its
+            // history; drop it in as `bio` when it turns up.
           },
         ],
       },
@@ -161,3 +153,25 @@ export const mock = {
     attribution: 'NY Arts Magazine',
   },
 }
+
+// Each person gets their own page at /octobermockup/<slug> so bios live
+// there instead of as a wall of text on the mockup itself. Slugs are derived
+// from the name, so renaming someone changes their URL — fine while this is
+// a mockup, worth pinning if these links ever get shared widely.
+export const slugify = (name) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
+// Flat index of everyone on the page, in the order they appear.
+export const people = [
+  ...mock.people.members.map((m) => ({ ...m, group: mock.people.eyebrow })),
+  ...mock.roster.groups.flatMap((g) => g.people.map((p) => ({ ...p, group: g.title }))),
+].map((p) => ({ ...p, slug: slugify(p.name) }))
+
+export const personBySlug = (slug) => people.find((p) => p.slug === slug) ?? null
+
+// Everyone else in the same group, for the "more from" row on a person page.
+export const groupSiblings = (person) =>
+  people.filter((p) => p.group === person.group && p.slug !== person.slug)

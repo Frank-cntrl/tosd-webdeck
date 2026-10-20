@@ -2,7 +2,8 @@ import GalleryGrid from '../components/GalleryGrid'
 import Timeline from '../components/Timeline'
 import HeroMontage from '../components/mock/HeroMontage'
 import Panel from '../components/mock/Panel'
-import Tbd from '../components/mock/Tbd'
+import MockNav from '../components/mock/MockNav'
+import PersonCard from '../components/mock/PersonCard'
 import { Media } from './Documentaries'
 import { colorway, prefix } from '../colorways'
 import { site } from '../content/site'
@@ -34,51 +35,10 @@ function Bullets({ items }) {
   )
 }
 
-// Shared by the core team and the consultant roster. Falls back to a dashed
-// square for everyone whose headshot we don't have yet.
-function PersonCard({ person }) {
-  const line = person.role || person.credit
-  return (
-    <div>
-      {person.photo ? (
-        <img
-          src={person.photo}
-          alt={person.name}
-          className="aspect-square w-full rounded-md object-cover"
-        />
-      ) : (
-        <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink" />
-      )}
-      <p className="mt-3 text-sm text-white">{person.name}</p>
-      {line && <p className="text-xs leading-relaxed text-neutral-500">{line}</p>}
-      {person.bio && (
-        <p className="mt-3 text-sm leading-relaxed text-neutral-400">{person.bio}</p>
-      )}
-      {person.bioTbd && <Tbd className="mt-3">{person.bioTbd}</Tbd>}
-    </div>
-  )
-}
-
 export default function OctoberMockup() {
   return (
     <div className="min-h-screen bg-ink">
-      {/* Nav */}
-      <header className="sticky top-0 z-50 border-b border-edge bg-ink/90 backdrop-blur">
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <a href={`${prefix}/octobermockup`} className="flex shrink-0 items-center gap-2">
-            <img src={colorway.logo} alt="" className="h-7 w-auto" />
-            <span className="whitespace-nowrap font-display text-lg uppercase tracking-widest text-white sm:text-xl">
-              {brand.name}
-            </span>
-          </a>
-          <a
-            href={`${prefix}/`}
-            className="text-sm tracking-wide text-neutral-300 transition-colors hover:text-accent"
-          >
-            ← Current deck
-          </a>
-        </nav>
-      </header>
+      <MockNav backHref={`${prefix}/`} backLabel="← Current deck" />
 
       {/* Hero — full-bleed montage, logo overlaid */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden border-b border-edge">
@@ -118,7 +78,6 @@ export default function OctoberMockup() {
               Partner With Us
             </a>
           </div>
-          <Tbd className="mx-auto mt-6 max-w-xl">{mock.cta.tbd}</Tbd>
         </div>
       </section>
 
@@ -146,7 +105,6 @@ export default function OctoberMockup() {
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
           <Eyebrow>{about.historyEyebrow}</Eyebrow>
           <h2 className="font-display text-3xl text-white sm:text-4xl">{about.historyHeading}</h2>
-          <Tbd className="mt-6">{mock.historyNote.tbd}</Tbd>
           <div className="mt-10">
             <Timeline entries={about.history} />
           </div>
@@ -182,7 +140,6 @@ export default function OctoberMockup() {
           <div className="mt-8 grid items-start gap-10 lg:grid-cols-2">
             <img src={mock.brian.photo} alt={mock.brian.photoAlt} className="w-full rounded-md" />
             <div className="space-y-8">
-              <Tbd>{mock.brian.bioTbd}</Tbd>
               <div>
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">
                   {mock.brian.galleryLabel}
