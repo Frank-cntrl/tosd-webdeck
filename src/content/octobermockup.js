@@ -1,22 +1,35 @@
-// Content for the October mockup (/octobermockup) — the October language
-// document. The main deck at / still renders site.js, so copy here
-// deliberately diverges from it; do not "sync" the two.
-// Pulled from site.js unchanged (the document matches it): the history
-// timeline, the documentaries, and the executive summary.
+// Content for the October mockup (/octobermockup): the October language
+// document, as amended by the Oct 20 Jesse + Brian deck notes.
+// The main deck at / still renders site.js, so copy here deliberately
+// diverges from it; do not "sync" the two.
+// Pulled from site.js unchanged, because the document reproduces them
+// verbatim: the history timeline, the documentaries, the executive summary.
 
 export const mock = {
   hero: {
     // Stand-in for the "edge to edge montage gif". Swap `video` in to replace
     // the cross-fade with a real file.
     video: null,
-    montage: Array.from({ length: 10 }, (_, i) => `/photos/gallery/g${String(i + 1).padStart(2, '0')}.jpg?v=2`),
+    montage: [
+      ...Array.from({ length: 9 }, (_, i) => `/photos/gallery/g${String(i + 1).padStart(2, '0')}.jpg?v=2`),
+      // g10 reframed around the painting on the right: the full frame lost it
+      // to the edge once object-cover cropped for a phone.
+      '/photos/mock/hero-painting.jpg',
+    ],
     pillars: ['Fine Art', 'Comedy', 'Music', 'Cannabis'],
   },
   welcome: {
     eyebrow: 'Welcome',
     // Set as a three-line stanza; the name and short form come from site.brand.
     lead: 'Welcome to',
-    body: 'As we turn the page on another era of prohibition in New York City, The One Stop Drop (TOST’D) is here to provide space for people to enjoy the legalization of cannabis along with world-class artists, comedians and musicians. A weedeasy. So enjoy the art, grab a drink, and feel free to light up — everybody’s chill.',
+    // Segments so "weedeasy" can be italicized, per Jesse's note.
+    body: [
+      {
+        text: 'As we turn the page on another era of prohibition in New York City, The One Stop Drop (TOST’D) is here to provide space for people to enjoy the legalization of cannabis along with world-class artists, comedians and musicians. A ',
+      },
+      { text: 'weedeasy', em: true },
+      { text: '. So enjoy the art, grab a drink, and feel free to light up — everybody’s chill.' },
+    ],
   },
   intro: {
     eyebrow: 'Introduction',
@@ -25,19 +38,6 @@ export const mock = {
       'TOST’D is a cannabis hospitality and entertainment company that curates events and original content in collaboration with dispensaries and in preparation for cannabis consumption licenses, available in 2027 in New York State.',
       'Queens’ own Brian Morris started out as a dealer and performer and grew into a curator and entrepreneur. TOST’D is his latest venture. Since stepping into the art scene in the early-2000s, Brian has featured hundreds of fine artists, comedians and musicians at his shows and in his galleries. Now, together, we are ready to connect the cannabis industry to the highest caliber of art and entertainment the city has to offer.',
     ],
-  },
-  // Carried by the full-bleed slot the mockup used for "The Opportunity".
-  value: {
-    eyebrow: 'Value Proposition',
-    image: '/photos/mock/opportunity.jpg',
-    lead: 'By providing our cannabis brand partners with programming and marketing that drive traffic for their brands — without the necessity of including cannabis, thus circumventing advertising restrictions — we can activate an ecosystem of culture and commerce across cultural touchpoints.',
-    body: 'On-site consumption licenses in New York are projected to be available and effective in 2027. Our timing is perfectly aligned with the range of opportunities this will present. With your support, we will produce an incredible season of programming and position ourselves as leaders within these industries. We also believe this is scalable across New York State and beyond.',
-  },
-  brian: {
-    eyebrow: 'Brian Morris',
-    photo: '/photos/brian-rooftop.jpg',
-    photoAlt: 'Brian Morris crouched on a rooftop railing above the Lower East Side',
-    galleryLabel: 'A Glimpse at the Past',
   },
   partners: {
     eyebrow: 'An Alliance for Culture and Growth',
@@ -68,72 +68,20 @@ export const mock = {
   },
   people: {
     eyebrow: 'The People Behind The Drop',
+    // Oct 20 notes: "Scrap everybody but the top five." Brian is listed here
+    // with everyone else rather than getting his own section, and uses the
+    // rooftop photo ("Roof better - too many me for sure!").
     members: [
-      // Brian: "no need for bio" per the October notes.
-      { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian.jpg' },
+      { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian-rooftop.jpg' },
       { name: 'Thomas Fishwick', role: 'Emmy Award Winning Filmmaker' },
       {
         name: 'Jesse LaVercombe',
         role: 'Director of Communications',
         // Jesse offered a headshot; we don't have the file yet.
-        bio: 'Jesse LaVercombe is a writer and actor based in Toronto. He co-wrote the film Code 8: Part II, which hit #1 on Netflix in 71 countries, and he and Ahmed Moneka wrote the book for the hit musical It\u2019s a Good Life if You Don\u2019t Weaken featuring the catalog of The Tragically Hip, currently touring Canada. Jesse and Ahmed also co-created and starred in the Dora-winning theatre production King Gilgamesh, featuring Ahmed\u2019s Arabic Jazz band, which played in Minneapolis, Chicago, New York City, Halifax, and twice in Toronto. As an actor, he won the Toronto ACTRA Award and received a Canadian Screen Award nomination for Violation (Sundance, TIFF) and performed on stages across the U.S. and Canada. He also sits on the board of the Zephyr Theatre in Minnesota.',
+        bio: 'Jesse LaVercombe is a writer and actor based in Toronto. He co-wrote the film Code 8: Part II, which hit #1 on Netflix in 71 countries, and he and Ahmed Moneka wrote the book for the hit musical It’s a Good Life if You Don’t Weaken featuring the catalog of The Tragically Hip, currently touring Canada. Jesse and Ahmed also co-created and starred in the Dora-winning theatre production King Gilgamesh, featuring Ahmed’s Arabic Jazz band, which played in Minneapolis, Chicago, New York City, Halifax, and twice in Toronto. As an actor, he won the Toronto ACTRA Award and received a Canadian Screen Award nomination for Violation (Sundance, TIFF) and performed on stages across the U.S. and Canada. He also sits on the board of the Zephyr Theatre in Minnesota.',
       },
       { name: 'Chris Cheney', role: 'Graphic Designer' },
       { name: 'Franccesco Petta', role: 'Web Design & Management' },
-    ],
-  },
-  // Consultants, curators and early featured artists, grouped by discipline.
-  // Names with no credit in the October notes carry an empty `credit`.
-  roster: {
-    eyebrow: 'Consultants, Curators & Early Featured Artists',
-    groups: [
-      {
-        title: 'Fine Art',
-        people: [
-          {
-            name: 'Min Kim',
-            credit: 'Fine Artist & Designer',
-            bio: 'Min Kim is a Fine Artist and Designer featured in museums, galleries and luxury brands, including MoMA PS1, Tiffany, Chanel, Louis Vuitton and more.',
-          },
-          { name: 'Noah Post', credit: 'Artist / Curator / Creative' },
-          { name: 'Philip Knoll', credit: 'Artist / Curator' },
-          { name: 'Sue Knoll', credit: 'Artist / Curator' },
-        ],
-      },
-      {
-        title: 'Comedy',
-        people: [
-          {
-            name: 'Tait Winston',
-            credit: 'Comedy Artist / Producer / Writer',
-            // October notes: "may take on a role within executive team -
-            // bio on previous deck". That bio is not in this repo or its
-            // history; drop it in as `bio` when it turns up.
-          },
-        ],
-      },
-      {
-        title: 'Music',
-        people: [
-          { name: 'Joel Thome', credit: 'Grammy Award Winning Composer' },
-          { name: 'Verna Gillis', credit: 'NYC Soundscapes' },
-          { name: 'Per Vikstrom', credit: 'Tour Manager \u2014 Hall & Oates, Mariah Carey' },
-          { name: 'Robert G. Garcia', credit: 'Jazz Drummer' },
-          { name: 'Phil Moffa', credit: 'Musician / Audio Engineer / Grammy' },
-        ],
-      },
-      {
-        title: 'Film & Documentary',
-        people: [
-          {
-            name: 'Jamal Hodge',
-            credit: 'Writer & Director',
-            bio: 'Jamal Hodge is a Bram Stoker Award-winning writer, a Nebula Award finalist, and an award-winning director. His producing credits include the Academy Award-nominated documentary Armed Only With a Camera: The Life & Death of Brent Renaud (co-producer) and the animated feature film Pierre the Pigeon Hawk.',
-          },
-          { name: 'Brian Licata', credit: '' },
-          { name: 'Pete Demas', credit: '' },
-        ],
-      },
     ],
   },
   collage: {
@@ -163,6 +111,28 @@ export const mock = {
   },
 }
 
+// Cut by the Oct 20 notes ("Scrap everybody but the top five"), kept here so
+// the written bios aren't lost if the roster comes back:
+//
+//   Fine Art — Min Kim (Fine Artist & Designer): "Min Kim is a Fine Artist
+//     and Designer featured in museums, galleries and luxury brands,
+//     including MoMA PS1, Tiffany, Chanel, Louis Vuitton and more."
+//   Fine Art — Noah Post (Artist / Curator / Creative), Philip Knoll
+//     (Artist / Curator), Sue Knoll (Artist / Curator)
+//   Comedy — Tait Winston (Comedy Artist / Producer / Writer). The notes say
+//     his bio is "on previous deck"; it is not in this repo or its history.
+//   Music — Joel Thome (Grammy Award Winning Composer), Verna Gillis
+//     (NYC Soundscapes), Per Vikstrom (Tour Manager — Hall & Oates, Mariah
+//     Carey), Robert G. Garcia (Jazz Drummer), Phil Moffa (Musician / Audio
+//     Engineer / Grammy)
+//   Film & Documentary — Jamal Hodge (Writer & Director): "Jamal Hodge is a
+//     Bram Stoker Award-winning writer, a Nebula Award finalist, and an
+//     award-winning director. His producing credits include the Academy
+//     Award-nominated documentary Armed Only With a Camera: The Life & Death
+//     of Brent Renaud (co-producer) and the animated feature film Pierre the
+//     Pigeon Hawk."
+//   Film & Documentary — Brian Licata, Pete Demas
+
 // Each person gets their own page at /octobermockup/<slug> so bios live
 // there instead of as a wall of text on the mockup itself. Slugs are derived
 // from the name, so renaming someone changes their URL — fine while this is
@@ -173,11 +143,11 @@ export const slugify = (name) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
 
-// Flat index of everyone on the page, in the order they appear.
-export const people = [
-  ...mock.people.members.map((m) => ({ ...m, group: mock.people.eyebrow })),
-  ...mock.roster.groups.flatMap((g) => g.people.map((p) => ({ ...p, group: g.title }))),
-].map((p) => ({ ...p, slug: slugify(p.name) }))
+export const people = mock.people.members.map((m) => ({
+  ...m,
+  group: mock.people.eyebrow,
+  slug: slugify(m.name),
+}))
 
 export const personBySlug = (slug) => people.find((p) => p.slug === slug) ?? null
 

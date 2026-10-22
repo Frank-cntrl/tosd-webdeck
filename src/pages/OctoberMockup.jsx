@@ -1,4 +1,3 @@
-import GalleryGrid from '../components/GalleryGrid'
 import Timeline from '../components/Timeline'
 import HeroMontage from '../components/mock/HeroMontage'
 import Panel from '../components/mock/Panel'
@@ -52,8 +51,14 @@ export default function OctoberMockup() {
           <p className="mt-4 font-display text-xl uppercase tracking-[0.2em] text-white sm:text-2xl">
             {brand.short}
           </p>
-          <p className="mt-6 text-sm uppercase tracking-[0.35em] text-accent">
-            {mock.hero.pillars.join(' · ')}
+          {/* Pairs stay unbroken so a separator never dangles at a line end. */}
+          <p className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm uppercase tracking-[0.35em] text-accent">
+            {mock.hero.pillars.map((p, i) => (
+              <span key={p} className="whitespace-nowrap">
+                {i > 0 && <span className="mr-3 text-accent/60">·</span>}
+                {p}
+              </span>
+            ))}
           </p>
         </div>
       </section>
@@ -71,16 +76,20 @@ export default function OctoberMockup() {
               {brand.short}
             </span>
           </h2>
-          <p className="mt-8 text-lg leading-relaxed text-neutral-300">{mock.welcome.body}</p>
+          <p className="mt-8 text-lg leading-relaxed text-neutral-300">
+            {mock.welcome.body.map((s) =>
+              s.em ? <em key={s.text}>{s.text}</em> : <span key={s.text}>{s.text}</span>,
+            )}
+          </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href="#plan"
+              href="#closing"
               className="rounded-sm border border-neutral-600 px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:border-accent hover:text-accent"
             >
               See The Plan
             </a>
             <a
-              href="#closing"
+              href="#partners"
               className="rounded-sm bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-widest text-ink transition-opacity hover:opacity-85"
             >
               Partner With Us
@@ -108,61 +117,15 @@ export default function OctoberMockup() {
         </div>
       </section>
 
-      {/* History */}
-      <section id="history" className="border-b border-edge scroll-mt-16">
+      {/* For Brands and Partners — moved up into the slot History used to hold */}
+      <section id="partners" className="border-b border-edge scroll-mt-16">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-          <Eyebrow>{about.historyEyebrow}</Eyebrow>
-          <h2 className="font-display text-3xl text-white sm:text-4xl">{about.historyHeading}</h2>
-          <div className="mt-10">
-            <Timeline entries={about.history} />
-          </div>
-        </div>
-      </section>
-
-      {/* Value Proposition — full-bleed, copy in the negative space */}
-      <section className="relative overflow-hidden border-b border-edge">
-        <img
-          src={mock.value.image}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30"
-          aria-hidden="true"
-        />
-        <div className="relative mx-auto max-w-6xl px-4 py-28 sm:px-6">
-          <div className="max-w-xl">
-            <Eyebrow>{mock.value.eyebrow}</Eyebrow>
-            <p className="font-display text-2xl leading-relaxed text-white sm:text-3xl">
-              {mock.value.lead}
-            </p>
-            <p className="mt-8 text-base leading-relaxed text-neutral-300">{mock.value.body}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Brian — bio and the gallery */}
-      <section className="border-b border-edge">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <Eyebrow>{mock.brian.eyebrow}</Eyebrow>
-          <div className="mt-8 grid items-start gap-10 lg:grid-cols-2">
-            <img src={mock.brian.photo} alt={mock.brian.photoAlt} className="w-full rounded-md" />
-            <div className="space-y-8">
-              <div>
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">
-                  {mock.brian.galleryLabel}
-                </p>
-                <GalleryGrid limit={4} />
-                <div className="mt-6">
-                  <a
-                    href={`${prefix}/gallery`}
-                    className="rounded-sm border border-neutral-600 px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:border-accent hover:text-accent"
-                  >
-                    View All
-                  </a>
-                </div>
-              </div>
-            </div>
+          <Eyebrow>{mock.partners.eyebrow}</Eyebrow>
+          <h2 className="font-display text-3xl text-white sm:text-4xl">
+            {mock.partners.headline}
+          </h2>
+          <div className="mt-8">
+            <Bullets items={mock.partners.offers} />
           </div>
         </div>
       </section>
@@ -179,40 +142,16 @@ export default function OctoberMockup() {
         </div>
       </section>
 
-      {/* Consultants, curators and early featured artists */}
-      <section className="border-b border-edge">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <Eyebrow>{mock.roster.eyebrow}</Eyebrow>
-          <div className="mt-10 space-y-14">
-            {mock.roster.groups.map((g) => (
-              <div key={g.title}>
-                <h3 className="mb-6 border-b border-edge pb-3 font-display text-2xl text-white">
-                  {g.title}
-                </h3>
-                <div className="grid items-start gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-                  {g.people.map((p) => (
-                    <PersonCard key={p.name} person={p} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Visual summary collage */}
       <section className="border-b border-edge">
         <img src={mock.collage.image} alt={mock.collage.alt} className="w-full" />
       </section>
 
-      {/* Closing — dropdowns like history */}
+      {/* Closing dropdowns — History now sits here, where Brands used to be */}
       <section id="closing" className="border-b border-edge scroll-mt-16">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-          <Panel title={mock.partners.headline} defaultOpen>
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-              {mock.partners.eyebrow}
-            </p>
-            <Bullets items={mock.partners.offers} />
+          <Panel title={about.historyHeading}>
+            <Timeline entries={about.history} />
           </Panel>
 
           <Panel title={mock.plan.title}>
@@ -303,7 +242,7 @@ export default function OctoberMockup() {
             {executiveSummary.body}
           </p>
           <a
-            href="#closing"
+            href="#partners"
             className="rounded-sm bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition-opacity hover:opacity-85"
           >
             Partner With Us
