@@ -11,7 +11,7 @@ import { mock } from '../content/octobermockup'
 // History, documentaries and the executive summary come from site.js because
 // the October document reproduces them unchanged. Everything else comes from
 // octobermockup.js, which deliberately diverges from the live deck at /.
-const { brand, about, documentaries, executiveSummary, footer } = site
+const { brand, home, about, documentaries, executiveSummary, footer } = site
 
 function Eyebrow({ children }) {
   return (
@@ -81,19 +81,17 @@ export default function OctoberMockup() {
               s.em ? <em key={s.text}>{s.text}</em> : <span key={s.text}>{s.text}</span>,
             )}
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href="#closing"
-              className="rounded-sm border border-neutral-600 px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:border-accent hover:text-accent"
-            >
-              See The Plan
-            </a>
-            <a
-              href="#partners"
-              className="rounded-sm bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-widest text-ink transition-opacity hover:opacity-85"
-            >
-              Partner With Us
-            </a>
+          {/* Replaces the See The Plan / Partner With Us buttons. */}
+          <div className="mt-14">
+            <img src={colorway.logo} alt="" className="mx-auto mb-6 h-12 w-auto" />
+            <blockquote>
+              <p className="font-display text-xl italic leading-relaxed text-white sm:text-2xl">
+                “{home.rumi.text}”
+              </p>
+              <cite className="mt-4 block text-xs uppercase tracking-widest text-neutral-500 not-italic">
+                {home.rumi.attribution}
+              </cite>
+            </blockquote>
           </div>
         </div>
       </section>
