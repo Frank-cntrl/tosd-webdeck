@@ -240,17 +240,11 @@ export default function OctoberMockup() {
 
       {/* Executive summary + repeat call to action */}
       <section className="bg-surface/40">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 px-4 py-20 text-center sm:px-6">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-20 text-center sm:px-6">
           <Eyebrow>{executiveSummary.eyebrow}</Eyebrow>
           <p className="font-display text-2xl leading-relaxed text-white sm:text-3xl">
             {executiveSummary.body}
           </p>
-          <a
-            href="#partners"
-            className="rounded-sm bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition-opacity hover:opacity-85"
-          >
-            Partner With Us
-          </a>
         </div>
       </section>
 

@@ -74,24 +74,27 @@ export const mock = {
     // with everyone else rather than getting his own section, and uses the
     // rooftop photo ("Roof better - too many me for sure!").
     members: [
-      { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian-rooftop.jpg' },
+      { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian-rooftop.jpg', cardPhoto: '/photos/cards/brian-rooftop.jpg' },
       {
         name: 'Thomas Fishwick',
         role: 'Emmy Award Winning Filmmaker',
         photo: '/photos/thomas.jpg',
+        cardPhoto: '/photos/cards/thomas.jpg',
       },
       {
         name: 'Jesse LaVercombe',
         role: 'Director of Communications',
         photo: '/photos/jesse.jpg',
+        cardPhoto: '/photos/cards/jesse.jpg',
         photoCredit: 'Photo by Dahlia Katz',
         bio: 'Jesse LaVercombe is a writer and actor based in Toronto. He co-wrote the film Code 8: Part II, which hit #1 on Netflix in 71 countries, and he and Ahmed Moneka wrote the book for the hit musical It’s a Good Life if You Don’t Weaken featuring the catalog of The Tragically Hip, currently touring Canada. Jesse and Ahmed also co-created and starred in the Dora-winning theatre production King Gilgamesh, featuring Ahmed’s Arabic Jazz band, which played in Minneapolis, Chicago, New York City, Halifax, and twice in Toronto. As an actor, he won the Toronto ACTRA Award and received a Canadian Screen Award nomination for Violation (Sundance, TIFF) and performed on stages across the U.S. and Canada. He also sits on the board of the Zephyr Theatre in Minnesota.',
       },
-      { name: 'Chris Cheney', role: 'Graphic Designer', photo: '/photos/chris.jpg' },
+      { name: 'Chris Cheney', role: 'Graphic Designer', photo: '/photos/chris.jpg', cardPhoto: '/photos/cards/chris.jpg' },
       {
         name: 'Franccesco Petta',
         role: 'Web Design & Management',
         photo: '/photos/franccesco.jpg',
+        cardPhoto: '/photos/cards/franccesco.jpg',
       },
     ],
   },
