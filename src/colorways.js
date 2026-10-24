@@ -1,5 +1,5 @@
 // Temporary colorway previews: /lavender, /emerald, /crimson, /ocean serve the
-// same one-page deck with a different accent color and matching drop.
+// same deck with a different accent color and matching drop.
 export const colorways = {
   default: { accent: '#f5b942', logo: '/logo-gold.png' },
   lavender: { accent: '#b892e0', logo: '/logo-lavender.png' },
@@ -8,14 +8,22 @@ export const colorways = {
   ocean: { accent: '#6aa7d8', logo: '/logo-ocean.png' },
 }
 
-const segs = window.location.pathname.split('/').filter(Boolean)
-const cwSeg = colorways[segs[0]] ? segs[0] : null
+const raw = window.location.pathname.split('/').filter(Boolean)
+const cwSeg = colorways[raw[0]] ? raw[0] : null
 export const colorway = cwSeg ? colorways[cwSeg] : colorways.default
 // path prefix that preserves the active colorway (e.g. '/lavender')
 export const prefix = cwSeg ? `/${cwSeg}` : ''
+
+// Path segments with any colorway stripped off the front.
+const segs = cwSeg ? raw.slice(1) : raw
+
 export const isGalleryPage = segs.includes('gallery')
 export const isAnimationPage = segs.includes('animation')
+// The October deck is now the site root. The original stacked deck lives on
+// at /olddeck, and /octobermockup still resolves so shared links keep working.
+export const isOldDeck = segs.includes('olddeck')
+
 const octIdx = segs.indexOf('octobermockup')
-export const isOctoberMockup = octIdx !== -1
-// /octobermockup/<slug> serves one person's page instead of the full mockup.
-export const personSlug = octIdx === -1 ? null : (segs[octIdx + 1] ?? null)
+export const isLegacyMockupPath = octIdx !== -1
+// A person page is /<slug> at the root, or /octobermockup/<slug> as before.
+export const personSlug = octIdx !== -1 ? (segs[octIdx + 1] ?? null) : (segs[0] ?? null)

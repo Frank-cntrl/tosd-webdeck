@@ -3,7 +3,7 @@ import { prefix } from '../colorways'
 import { site } from '../content/site'
 import { personBySlug, groupSiblings, slugify } from '../content/octobermockup'
 
-const peopleHref = `${prefix}/octobermockup#people`
+const peopleHref = `${prefix}/#people`
 
 function Chrome({ children }) {
   return (
@@ -105,7 +105,7 @@ export default function MockPerson({ slug }) {
               {siblings.map((s) => (
                 <li key={s.slug} className="border-t border-edge pt-4">
                   <a
-                    href={`${prefix}/octobermockup/${slugify(s.name)}`}
+                    href={`${prefix}/${slugify(s.name)}`}
                     className="group block"
                   >
                     <span className="text-sm text-white transition-colors group-hover:text-accent">

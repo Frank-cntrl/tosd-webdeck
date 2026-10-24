@@ -4,13 +4,13 @@ import Panel from '../components/mock/Panel'
 import MockNav from '../components/mock/MockNav'
 import PersonCard from '../components/mock/PersonCard'
 import { Media } from './Documentaries'
-import { colorway, prefix } from '../colorways'
+import { colorway } from '../colorways'
 import { site } from '../content/site'
 import { mock, history } from '../content/octobermockup'
 
 // History, documentaries and the executive summary come from site.js because
 // the October document reproduces them unchanged. Everything else comes from
-// octobermockup.js, which deliberately diverges from the live deck at /.
+// octobermockup.js, which deliberately diverges from the old deck at /olddeck.
 const { brand, home, about, documentaries, executiveSummary, footer } = site
 
 function Eyebrow({ children }) {
@@ -37,7 +37,7 @@ function Bullets({ items }) {
 export default function OctoberMockup() {
   return (
     <div className="min-h-screen bg-ink">
-      <MockNav backHref={`${prefix}/`} backLabel="← Current deck" />
+      <MockNav />
 
       {/* Hero — full-bleed montage, logo overlaid */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden border-b border-edge">

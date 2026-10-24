@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { colorway } from './../colorways'
 
 const KEY = 'tostd-gate'
-const PASSWORDS = ['JandC456', 'frank']
+const PASSWORDS = ['drop2026']
 
 export function isUnlocked() {
   try {

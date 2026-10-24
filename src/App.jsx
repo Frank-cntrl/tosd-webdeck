@@ -4,7 +4,14 @@ import Footer from './components/Footer'
 import Gate, { isUnlocked } from './components/Gate'
 import GalleryPage from './pages/GalleryPage'
 import AnimationPage from './pages/AnimationPage'
-import { isGalleryPage, isAnimationPage, isOctoberMockup, personSlug } from './colorways'
+import {
+  isGalleryPage,
+  isAnimationPage,
+  isOldDeck,
+  isLegacyMockupPath,
+  personSlug,
+} from './colorways'
+import { personBySlug } from './content/octobermockup'
 import Home from './pages/Home'
 import About from './pages/About'
 import Partners from './pages/Partners'
@@ -17,13 +24,8 @@ import Documentaries from './pages/Documentaries'
 import OctoberMockup from './pages/OctoberMockup'
 import MockPerson from './pages/MockPerson'
 
-export default function App() {
-  const [unlocked, setUnlocked] = useState(isUnlocked)
-  if (!unlocked) return <Gate onUnlock={() => setUnlocked(true)} />
-  if (isOctoberMockup)
-    return personSlug ? <MockPerson slug={personSlug} /> : <OctoberMockup />
-  if (isAnimationPage) return <AnimationPage />
-  if (isGalleryPage) return <GalleryPage />
+// The original stacked deck, kept at /olddeck now that October is the root.
+function OldDeck() {
   return (
     <div className="flex min-h-screen flex-col bg-ink">
       <Nav />
@@ -59,4 +61,19 @@ export default function App() {
       <Footer />
     </div>
   )
+}
+
+export default function App() {
+  const [unlocked, setUnlocked] = useState(isUnlocked)
+  if (!unlocked) return <Gate onUnlock={() => setUnlocked(true)} />
+  if (isAnimationPage) return <AnimationPage />
+  if (isGalleryPage) return <GalleryPage />
+  if (isOldDeck) return <OldDeck />
+  // At the root only a real slug opens a person page, so an unknown path still
+  // lands on the deck. Under /octobermockup/ an unknown slug keeps its
+  // found-nothing page.
+  if (personSlug && (isLegacyMockupPath || personBySlug(personSlug))) {
+    return <MockPerson slug={personSlug} />
+  }
+  return <OctoberMockup />
 }

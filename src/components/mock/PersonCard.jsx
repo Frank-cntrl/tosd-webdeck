@@ -8,7 +8,7 @@ export default function PersonCard({ person }) {
   // Square crop framed so every face sits at the same height across the grid.
   const src = person.cardPhoto ?? person.photo
   return (
-    <a href={`${prefix}/octobermockup/${slugify(person.name)}`} className="group block">
+    <a href={`${prefix}/${slugify(person.name)}`} className="group block">
       {src ? (
         <img
           src={src}

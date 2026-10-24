@@ -1,6 +1,6 @@
 // Content for the October mockup (/octobermockup): the October language
 // document, as amended by the Oct 20 Jesse + Brian deck notes.
-// The main deck at / still renders site.js, so copy here deliberately
+// The old deck at /olddeck still renders site.js, so copy here deliberately
 // diverges from it; do not "sync" the two.
 // Pulled from site.js unchanged, because the document reproduces them
 // verbatim: the history timeline, the documentaries, the executive summary.
