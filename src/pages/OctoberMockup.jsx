@@ -6,7 +6,7 @@ import PersonCard from '../components/mock/PersonCard'
 import { Media } from './Documentaries'
 import { colorway, prefix } from '../colorways'
 import { site } from '../content/site'
-import { mock } from '../content/octobermockup'
+import { mock, history } from '../content/octobermockup'
 
 // History, documentaries and the executive summary come from site.js because
 // the October document reproduces them unchanged. Everything else comes from
@@ -149,7 +149,7 @@ export default function OctoberMockup() {
       <section id="closing" className="border-b border-edge scroll-mt-16">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
           <Panel title={about.historyHeading}>
-            <Timeline entries={about.history} />
+            <Timeline entries={history} />
           </Panel>
 
           <Panel title={mock.plan.title}>
@@ -179,6 +179,12 @@ export default function OctoberMockup() {
       {/* From April 2014 — the NY Arts Magazine interview */}
       <section className="border-b border-edge bg-surface/40">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+          <img
+            src={mock.article.image.src}
+            alt={mock.article.image.alt}
+            loading="lazy"
+            className="mb-10 w-full rounded-md"
+          />
           <Eyebrow>{mock.article.eyebrow}</Eyebrow>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-300">
             {mock.article.lines.map((l) => (

@@ -5,6 +5,8 @@
 // Pulled from site.js unchanged, because the document reproduces them
 // verbatim: the history timeline, the documentaries, the executive summary.
 
+import { site } from './site.js'
+
 export const mock = {
   hero: {
     // Stand-in for the "edge to edge montage gif". Swap `video` in to replace
@@ -73,14 +75,19 @@ export const mock = {
     // rooftop photo ("Roof better - too many me for sure!").
     members: [
       { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian-rooftop.jpg' },
-      { name: 'Thomas Fishwick', role: 'Emmy Award Winning Filmmaker' },
+      {
+        name: 'Thomas Fishwick',
+        role: 'Emmy Award Winning Filmmaker',
+        photo: '/photos/thomas.jpg',
+      },
       {
         name: 'Jesse LaVercombe',
         role: 'Director of Communications',
-        // Jesse offered a headshot; we don't have the file yet.
+        photo: '/photos/jesse.jpg',
+        photoCredit: 'Photo by Dahlia Katz',
         bio: 'Jesse LaVercombe is a writer and actor based in Toronto. He co-wrote the film Code 8: Part II, which hit #1 on Netflix in 71 countries, and he and Ahmed Moneka wrote the book for the hit musical It’s a Good Life if You Don’t Weaken featuring the catalog of The Tragically Hip, currently touring Canada. Jesse and Ahmed also co-created and starred in the Dora-winning theatre production King Gilgamesh, featuring Ahmed’s Arabic Jazz band, which played in Minneapolis, Chicago, New York City, Halifax, and twice in Toronto. As an actor, he won the Toronto ACTRA Award and received a Canadian Screen Award nomination for Violation (Sundance, TIFF) and performed on stages across the U.S. and Canada. He also sits on the board of the Zephyr Theatre in Minnesota.',
       },
-      { name: 'Chris Cheney', role: 'Graphic Designer' },
+      { name: 'Chris Cheney', role: 'Graphic Designer', photo: '/photos/chris.jpg' },
       { name: 'Franccesco Petta', role: 'Web Design & Management' },
     ],
   },
@@ -91,6 +98,10 @@ export const mock = {
   // The document heads this block with the date only — no "I Know the Deal".
   article: {
     eyebrow: 'From April 2014',
+    image: {
+      src: '/photos/mock/skyline.jpg',
+      alt: 'Painting of the Manhattan skyline at night in deep blue, the Empire State Building lit at its centre',
+    },
     lines: [
       { speaker: 'Pete Tobey', text: 'Why an art dealer?' },
       { speaker: 'Brian Morris', text: 'Because, Pete, I know the deal.' },
@@ -132,6 +143,28 @@ export const mock = {
 //     of Brent Renaud (co-producer) and the animated feature film Pierre the
 //     Pigeon Hawk."
 //   Film & Documentary — Brian Licata, Pete Demas
+
+// The timeline entries are site.js verbatim; these artworks hang on the
+// mockup's copy only, so the deck at / is unaffected. "The Gallery Years"
+// already carries the Ginzel sculpture from site.js.
+const historyImages = {
+  'The Spark': {
+    src: '/photos/mock/spark.jpg',
+    label: 'Painting of a figure reclining among flowers, foliage and coral',
+  },
+  Glasschord: {
+    src: '/photos/mock/glasschord.jpg',
+    label: 'Burning phoenix sculpture standing in snow',
+  },
+  'The Slow Burn': {
+    src: '/photos/mock/slow-burn.jpg',
+    label: 'Painting of a figure surrounded by flames',
+  },
+}
+
+export const history = site.about.history.map((e) =>
+  historyImages[e.title] ? { ...e, image: historyImages[e.title] } : e,
+)
 
 // Each person gets their own page at /octobermockup/<slug> so bios live
 // there instead of as a wall of text on the mockup itself. Slugs are derived

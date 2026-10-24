@@ -11,7 +11,7 @@ export default function PersonCard({ person }) {
         <img
           src={person.photo}
           alt={person.name}
-          className="aspect-square w-full rounded-md object-cover"
+          className="aspect-square w-full rounded-md object-cover object-top"
         />
       ) : (
         <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink transition-colors group-hover:border-accent/60" />

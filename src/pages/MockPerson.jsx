@@ -20,17 +20,18 @@ function Chrome({ children }) {
 }
 
 function Avatar({ person }) {
-  if (person.photo) {
+  if (!person.photo) {
     return (
-      <img
-        src={person.photo}
-        alt={person.name}
-        className="w-full rounded-md object-cover"
-      />
+      <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink" />
     )
   }
   return (
-    <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink" />
+    <figure>
+      <img src={person.photo} alt={person.name} className="w-full rounded-md object-cover" />
+      {person.photoCredit && (
+        <figcaption className="mt-2 text-xs text-neutral-600">{person.photoCredit}</figcaption>
+      )}
+    </figure>
   )
 }
 
