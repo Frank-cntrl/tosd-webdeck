@@ -88,7 +88,11 @@ export const mock = {
         bio: 'Jesse LaVercombe is a writer and actor based in Toronto. He co-wrote the film Code 8: Part II, which hit #1 on Netflix in 71 countries, and he and Ahmed Moneka wrote the book for the hit musical It’s a Good Life if You Don’t Weaken featuring the catalog of The Tragically Hip, currently touring Canada. Jesse and Ahmed also co-created and starred in the Dora-winning theatre production King Gilgamesh, featuring Ahmed’s Arabic Jazz band, which played in Minneapolis, Chicago, New York City, Halifax, and twice in Toronto. As an actor, he won the Toronto ACTRA Award and received a Canadian Screen Award nomination for Violation (Sundance, TIFF) and performed on stages across the U.S. and Canada. He also sits on the board of the Zephyr Theatre in Minnesota.',
       },
       { name: 'Chris Cheney', role: 'Graphic Designer', photo: '/photos/chris.jpg' },
-      { name: 'Franccesco Petta', role: 'Web Design & Management' },
+      {
+        name: 'Franccesco Petta',
+        role: 'Web Design & Management',
+        photo: '/photos/franccesco.jpg',
+      },
     ],
   },
   collage: {
