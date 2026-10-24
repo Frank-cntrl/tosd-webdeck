@@ -5,7 +5,8 @@ import { slugify } from '../../content/octobermockup'
 // their own page, so bios live there rather than inline on the mockup.
 export default function PersonCard({ person }) {
   const line = person.role || person.credit
-  // Square crop framed so every face sits at the same height across the grid.
+  // 3:4 crop: tall enough to hold Brian head-to-boots, and framed so the
+  // headshots put every face at the same height across the grid.
   const src = person.cardPhoto ?? person.photo
   return (
     <a href={`${prefix}/${slugify(person.name)}`} className="group block">
@@ -13,10 +14,10 @@ export default function PersonCard({ person }) {
         <img
           src={src}
           alt={person.name}
-          className="aspect-square w-full rounded-md object-cover"
+          className="aspect-[3/4] w-full rounded-md object-cover"
         />
       ) : (
-        <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink transition-colors group-hover:border-accent/60" />
+        <div className="aspect-[3/4] w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink transition-colors group-hover:border-accent/60" />
       )}
       <p className="mt-3 text-sm text-white transition-colors group-hover:text-accent">
         {person.name}

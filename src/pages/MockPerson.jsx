@@ -22,7 +22,7 @@ function Chrome({ children }) {
 function Avatar({ person }) {
   if (!person.photo) {
     return (
-      <div className="aspect-square w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink" />
+      <div className="aspect-[3/4] w-full rounded-md border border-dashed border-neutral-700 bg-gradient-to-br from-surface to-ink" />
     )
   }
   return (
