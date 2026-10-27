@@ -37,7 +37,7 @@ export const mock = {
     eyebrow: 'Introduction',
     heading: 'Culture, Curated. Networks, Integrated.',
     body: [
-      'TOST’D is a cannabis hospitality and entertainment company that curates events and original content in collaboration with dispensaries and in preparation for cannabis consumption licenses, available in 2027 in New York State.',
+      'TOST’D is a cannabis hospitality and entertainment company that curates events and original content in collaboration with dispensaries and venues, in preparation for cannabis consumption licenses, available in 2027 in New York State.',
       'Queens’ own Brian Morris started out as a dealer and performer and grew into a curator and entrepreneur. TOST’D is his latest venture. Since stepping into the art scene in the early-2000s, Brian has featured hundreds of fine artists, comedians and musicians at his shows and in his galleries. Now, together, we are ready to connect the cannabis industry to the highest caliber of art and entertainment the city has to offer.',
     ],
   },
@@ -52,7 +52,15 @@ export const mock = {
   },
   plan: {
     title: 'Plan of Action',
-    body: 'Over its first six months of operations, TOST’D will produce monthly events across a strategic network of partner venues, all featuring comedy, music and cannabis. In the fourth month, we will curate our first quarterly month-long fine art exhibition, featuring small works by 22 fine artists exploring Death and Rebirth. Once this foundation is set, we will build towards two more years of programming to scale our production capacity, agency, and long-term business model, including a flagship location.',
+    // 10/25/26 edits: "first year" rather than six months, quarterly
+    // exhibitions rather than one month-long show.
+    body: [
+      {
+        text: 'Over its first year of operations, TOST’D will produce monthly events across a strategic network of partner venues, all featuring comedy, music and cannabis. We will curate quarterly fine art exhibitions featuring emerging and mid-career fine artists, the first inspired by ',
+      },
+      { text: 'Death and Rebirth', em: true },
+      { text: '.' },
+    ],
   },
   seeking: {
     title: 'Actively Seeking',
@@ -102,9 +110,9 @@ export const mock = {
     image: '/photos/mock/collage.jpg',
     alt: 'Collage of NYC art, comedy, music and cannabis imagery around a gold drop',
   },
-  // The document heads this block with the date only — no "I Know the Deal".
+  // 10/25/26: opens as a tab rather than sitting open on the page.
   article: {
-    eyebrow: 'From April 2014',
+    title: 'Interview — April 2014',
     image: {
       src: '/photos/mock/skyline.jpg',
       alt: 'Painting of the Manhattan skyline at night in deep blue, the Empire State Building lit at its centre',

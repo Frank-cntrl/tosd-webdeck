@@ -19,6 +19,13 @@ function Eyebrow({ children }) {
   )
 }
 
+// Copy stored as segments so a phrase can be italicised.
+function Rich({ parts }) {
+  return parts.map((seg) =>
+    seg.em ? <em key={seg.text}>{seg.text}</em> : <span key={seg.text}>{seg.text}</span>,
+  )
+}
+
 function Bullets({ items }) {
   return (
     <ul className="max-w-3xl">
@@ -77,9 +84,7 @@ export default function OctoberMockup() {
             </span>
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-neutral-300">
-            {mock.welcome.body.map((s) =>
-              s.em ? <em key={s.text}>{s.text}</em> : <span key={s.text}>{s.text}</span>,
-            )}
+            <Rich parts={mock.welcome.body} />
           </p>
           {/* Replaces the See The Plan / Partner With Us buttons. */}
           <div className="mt-14">
@@ -148,12 +153,10 @@ export default function OctoberMockup() {
       {/* Closing dropdowns — History now sits here, where Brands used to be */}
       <section id="closing" className="border-b border-edge scroll-mt-16">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-          <Panel title={about.historyHeading}>
-            <Timeline entries={history} />
-          </Panel>
-
           <Panel title={mock.plan.title}>
-            <p className="text-base leading-relaxed text-neutral-400">{mock.plan.body}</p>
+            <p className="text-base leading-relaxed text-neutral-400">
+              <Rich parts={mock.plan.body} />
+            </p>
           </Panel>
 
           <Panel title={mock.seeking.title}>
@@ -173,6 +176,11 @@ export default function OctoberMockup() {
               {mock.capital.note}
             </p>
           </Panel>
+
+          {/* 10/25/26: "Rooted…" should be the last/fourth tab. */}
+          <Panel title={about.historyHeading}>
+            <Timeline entries={history} />
+          </Panel>
         </div>
       </section>
 
@@ -183,20 +191,21 @@ export default function OctoberMockup() {
             src={mock.article.image.src}
             alt={mock.article.image.alt}
             loading="lazy"
-            className="mb-10 w-full rounded-md"
+            className="mb-6 w-full rounded-md"
           />
-          <Eyebrow>{mock.article.eyebrow}</Eyebrow>
-          <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-300">
-            {mock.article.lines.map((l) => (
-              <p key={l.text.slice(0, 40)}>
-                {l.speaker && <span className="font-semibold text-accent">{l.speaker}: </span>}
-                <span className={l.speaker ? '' : 'text-neutral-400'}>{l.text}</span>
-              </p>
-            ))}
-          </div>
-          <p className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
-            — {mock.article.attribution}
-          </p>
+          <Panel title={mock.article.title}>
+            <div className="space-y-5 text-base leading-relaxed text-neutral-300">
+              {mock.article.lines.map((l) => (
+                <p key={l.text.slice(0, 40)}>
+                  {l.speaker && <span className="font-semibold text-accent">{l.speaker}: </span>}
+                  <span className={l.speaker ? '' : 'text-neutral-400'}>{l.text}</span>
+                </p>
+              ))}
+            </div>
+            <p className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
+              — {mock.article.attribution}
+            </p>
+          </Panel>
         </div>
       </section>
 
