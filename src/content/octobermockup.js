@@ -85,7 +85,7 @@ export const mock = {
       { name: 'Brian D. Morris', role: 'CEO & Founder', photo: '/photos/brian-rooftop.jpg', cardPhoto: '/photos/cards/brian-rooftop.jpg' },
       {
         name: 'Thomas Fishwick',
-        role: 'Emmy Award Winning Filmmaker',
+        role: 'Cinematographer',
         photo: '/photos/thomas.jpg',
         cardPhoto: '/photos/cards/thomas.jpg',
         bio: 'Thomas Fishwick is an Emmy Award-winning cinematographer known for striking visuals. His credits include HBO Max, CNN, ABC News Studios, Rubber Ring Films, and Comedians in Cars Getting Coffee.',
@@ -110,6 +110,7 @@ export const mock = {
         role: 'Web Design & Management',
         photo: '/photos/franccesco.jpg',
         cardPhoto: '/photos/cards/franccesco.jpg',
+        bio: 'Franccesco Petta is a Brooklyn-based software engineer and full-stack developer who builds and maintains TOST’D’s web presence. He has merged patches into Firefox as an open-source contributor to Mozilla, shipped an iOS app to the App Store, and won first place at the CCNY hackathon.',
       },
     ],
   },
