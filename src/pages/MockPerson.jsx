@@ -80,16 +80,13 @@ export default function MockPerson({ slug }) {
             {line && (
               <p className="mt-4 text-sm uppercase tracking-[0.2em] text-neutral-400">{line}</p>
             )}
-            {paragraphs.length > 0 ? (
+            {/* No bio is a valid state — Brian doesn't need one. */}
+            {paragraphs.length > 0 && (
               <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-300">
                 {paragraphs.map((p) => (
                   <p key={p.slice(0, 40)}>{p}</p>
                 ))}
               </div>
-            ) : (
-              <p className="mt-8 text-base italic leading-relaxed text-neutral-500">
-                Bio coming soon.
-              </p>
             )}
           </div>
         </div>
