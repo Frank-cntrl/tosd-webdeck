@@ -6,7 +6,7 @@ import PersonCard from '../components/mock/PersonCard'
 import { Media } from './Documentaries'
 import { colorway } from '../colorways'
 import { site } from '../content/site'
-import { mock, history } from '../content/octobermockup'
+import { mock, history, press } from '../content/octobermockup'
 
 // History, documentaries and the executive summary come from site.js because
 // the October document reproduces them unchanged. Everything else comes from
@@ -184,28 +184,46 @@ export default function OctoberMockup() {
         </div>
       </section>
 
-      {/* From April 2014 — the NY Arts Magazine interview */}
+      {/* In the Press — the interview and the reviews, each as a tab */}
       <section className="border-b border-edge bg-surface/40">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
           <img
-            src={mock.article.image.src}
-            alt={mock.article.image.alt}
+            src={press.image.src}
+            alt={press.image.alt}
             loading="lazy"
-            className="mb-6 w-full rounded-md"
+            className="mb-10 w-full rounded-md"
           />
-          <Panel title={mock.article.title}>
-            <div className="space-y-5 text-base leading-relaxed text-neutral-300">
-              {mock.article.lines.map((l) => (
-                <p key={l.text.slice(0, 40)}>
-                  {l.speaker && <span className="font-semibold text-accent">{l.speaker}: </span>}
-                  <span className={l.speaker ? '' : 'text-neutral-400'}>{l.text}</span>
+          <Eyebrow>{press.eyebrow}</Eyebrow>
+          <div className="mt-6">
+            {press.tabs.map((t) => (
+              <Panel key={t.title} title={t.title}>
+                {t.lines ? (
+                  <div className="space-y-5 text-base leading-relaxed text-neutral-300">
+                    {t.lines.map((l) => (
+                      <p key={l.text.slice(0, 40)}>
+                        {l.speaker && (
+                          <span className="font-semibold text-accent">{l.speaker}: </span>
+                        )}
+                        <span className={l.speaker ? '' : 'text-neutral-400'}>{l.text}</span>
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <blockquote className="border-l-2 border-accent pl-5">
+                    <p
+                      className="text-base italic leading-relaxed text-white sm:text-lg"
+                      style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+                    >
+                      {t.quote}
+                    </p>
+                  </blockquote>
+                )}
+                <p className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
+                  — {t.attribution}
                 </p>
-              ))}
-            </div>
-            <p className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
-              — {mock.article.attribution}
-            </p>
-          </Panel>
+              </Panel>
+            ))}
+          </div>
         </div>
       </section>
 

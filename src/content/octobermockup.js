@@ -110,31 +110,6 @@ export const mock = {
     image: '/photos/mock/collage.jpg',
     alt: 'Collage of NYC art, comedy, music and cannabis imagery around a gold drop',
   },
-  // 10/25/26: opens as a tab rather than sitting open on the page.
-  article: {
-    title: 'Interview — April 2014',
-    image: {
-      src: '/photos/mock/skyline.jpg',
-      alt: 'Painting of the Manhattan skyline at night in deep blue, the Empire State Building lit at its centre',
-    },
-    lines: [
-      { speaker: 'Pete Tobey', text: 'Why an art dealer?' },
-      { speaker: 'Brian Morris', text: 'Because, Pete, I know the deal.' },
-      {
-        speaker: '',
-        text: 'I’ve been around dealers of all kinds all my life. I’ve seen dealers sell bags of weed through mailbox slots in East New York, and I’ve seen people make multi-million dollar real estate deals, and everything in between.',
-      },
-      {
-        speaker: '',
-        text: 'I have been surrounded by artists, always have been: painters, writers, dancers, comedians, musicians, actors, rappers and poets.',
-      },
-      {
-        speaker: '',
-        text: 'They inspire me to create and live fully, and now I have an opportunity to share their work with the world. I’m a facilitator by nature and I absolutely love being at the confluence for all these creative individuals to come together and create dialogue. There is a wonderful ethos that is happening down here on Chrystie Street. I welcome the collaboration, the debate, the harmony and even the discord – those little moments when egos are diminished and the soul and the spirit of the converging energies involved take over. It’s really wonderful and exciting.',
-      },
-    ],
-    attribution: 'NY Arts Magazine',
-  },
 }
 
 // Cut by the Oct 20 notes ("Scrap everybody but the top five"), kept here so
@@ -177,9 +152,11 @@ const historyImages = {
   },
 }
 
-export const history = site.about.history.map((e) =>
-  historyImages[e.title] ? { ...e, image: historyImages[e.title] } : e,
-)
+export const history = site.about.history.map((e) => {
+  // The review quotes moved to the press tabs, so drop them here.
+  const { quotes, ...rest } = e
+  return historyImages[e.title] ? { ...rest, image: historyImages[e.title] } : rest
+})
 
 // Each person gets their own page at /octobermockup/<slug> so bios live
 // there instead of as a wall of text on the mockup itself. Slugs are derived
@@ -202,3 +179,43 @@ export const personBySlug = (slug) => people.find((p) => p.slug === slug) ?? nul
 // Everyone else in the same group, for the "more from" row on a person page.
 export const groupSiblings = (person) =>
   people.filter((p) => p.group === person.group && p.slug !== person.slug)
+
+const galleryYears = site.about.history.find((e) => e.title === 'The Gallery Years')
+
+// 10/27/26: the Pete Tobey interview and the two review quotes open as tabs
+// together. The reviews are pulled from site.js so the wording stays single
+// -sourced, and `history` below strips them out of the timeline entry so the
+// same quotes are not shown twice.
+export const press = {
+  eyebrow: 'In the Press',
+  image: {
+    src: '/photos/mock/skyline.jpg',
+    alt: 'Painting of the Manhattan skyline at night in deep blue, the Empire State Building lit at its centre',
+  },
+  tabs: [
+    {
+      title: 'Interview — April 2014',
+    lines: [
+      { speaker: 'Pete Tobey', text: 'Why an art dealer?' },
+      { speaker: 'Brian Morris', text: 'Because, Pete, I know the deal.' },
+      {
+        speaker: '',
+        text: 'I’ve been around dealers of all kinds all my life. I’ve seen dealers sell bags of weed through mailbox slots in East New York, and I’ve seen people make multi-million dollar real estate deals, and everything in between.',
+      },
+      {
+        speaker: '',
+        text: 'I have been surrounded by artists, always have been: painters, writers, dancers, comedians, musicians, actors, rappers and poets.',
+      },
+      {
+        speaker: '',
+        text: 'They inspire me to create and live fully, and now I have an opportunity to share their work with the world. I’m a facilitator by nature and I absolutely love being at the confluence for all these creative individuals to come together and create dialogue. There is a wonderful ethos that is happening down here on Chrystie Street. I welcome the collaboration, the debate, the harmony and even the discord – those little moments when egos are diminished and the soul and the spirit of the converging energies involved take over. It’s really wonderful and exciting.',
+      },
+    ],
+      attribution: 'NY Arts Magazine',
+    },
+    ...galleryYears.quotes.map((q) => {
+      const [person, outlet] = q.attribution.split(', ')
+      return { title: `${outlet} — ${person}`, quote: q.text, attribution: q.attribution }
+    }),
+  ],
+}
